@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-burgundy: #6B2737;
+  --color-burgundy-deep: #4A1A26;
+  --color-olive: #6B7C3F;
+  --color-olive-light: #8A9B5E;
+  --color-cream: #F5F0E8;
+  --color-cream-dark: #E8E0D0;
+  --color-charcoal: #2C2C2C;
+  --color-white: #FEFCF9;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--color-charcoal);
+  background: var(--color-white);
+}
+
+/* Skip to content link for accessibility */
+.skip-to-content {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  padding: 0.75rem 1.5rem;
+  background: var(--color-burgundy);
+  color: white;
+  border-radius: 0 0 0.5rem 0.5rem;
+  transition: top 0.2s ease;
+}
+
+.skip-to-content:focus {
+  top: 0;
+}
+
+/* Scroll-triggered animation observer */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Placeholder image styles */
+.placeholder-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.875rem;
+  padding: 1rem;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
