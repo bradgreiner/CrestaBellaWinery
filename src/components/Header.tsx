@@ -18,7 +18,7 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 100);
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
@@ -33,46 +33,53 @@ export default function Header() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? "bg-cream-light/95 backdrop-blur-sm shadow-sm"
-          : "bg-transparent"
+          : "bg-transparent border-b border-white/20"
       }`}
     >
       <nav
         className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
         aria-label="Main navigation"
       >
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
+        <div
+          className={`flex items-center justify-center transition-all duration-300 ${
+            isScrolled ? "h-16" : "h-20"
+          }`}
+        >
+          {/* Logo - only visible when scrolled */}
           <Link
             href="/"
-            className="flex-shrink-0 transition-opacity hover:opacity-80"
+            className={`absolute left-4 sm:left-6 lg:left-8 flex-shrink-0 transition-all duration-300 ${
+              isScrolled
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 -translate-y-2 pointer-events-none"
+            }`}
             aria-label="Cresta Bella Vineyards - Home"
+            tabIndex={isScrolled ? 0 : -1}
           >
             <Image
               src="/images/logo.png"
               alt="Cresta Bella Vineyards logo"
-              width={60}
-              height={60}
-              className={`transition-all duration-300 ${
-                isScrolled ? "" : "brightness-125"
-              }`}
+              width={40}
+              height={40}
+              className="transition-all duration-300"
               priority
             />
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          {/* Desktop Navigation - centered */}
+          <div className="hidden md:flex items-center space-x-10">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm tracking-widest uppercase transition-colors duration-200 hover:text-burgundy ${
+                className={`text-sm tracking-[0.2em] uppercase font-sans transition-colors duration-200 ${
                   pathname === link.href
                     ? isScrolled
-                      ? "text-burgundy font-medium"
-                      : "text-cream-light font-medium"
+                      ? "text-burgundy"
+                      : "text-cream-light"
                     : isScrolled
-                    ? "text-charcoal/70"
-                    : "text-cream-light/80"
+                    ? "text-charcoal/60 hover:text-burgundy"
+                    : "text-cream-light/80 hover:text-cream-light"
                 }`}
               >
                 {link.label}
@@ -80,10 +87,10 @@ export default function Header() {
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button - right aligned */}
           <button
             type="button"
-            className="md:hidden p-2 -mr-2"
+            className="md:hidden absolute right-4 sm:right-6 p-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-expanded={isMenuOpen}
             aria-controls="mobile-menu"
@@ -123,9 +130,9 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 role="menuitem"
-                className={`block py-3 px-4 text-sm tracking-widest uppercase transition-colors ${
+                className={`block py-3 px-4 text-sm tracking-[0.2em] uppercase font-sans transition-colors ${
                   pathname === link.href
-                    ? "text-burgundy font-medium"
+                    ? "text-burgundy"
                     : "text-charcoal/70 hover:text-burgundy"
                 }`}
               >

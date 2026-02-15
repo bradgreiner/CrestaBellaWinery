@@ -131,7 +131,7 @@ export default function Home() {
       <VideoHero
         variant="home"
         title="Cresta Bella Vineyards"
-        subtitle="Small Batch Winery"
+        subtitle="Small Batch Wines from the Santa Rosa Plateau"
         videoMp4="/videos/IMG_8563.mp4"
         videoMov="/images/IMG_8563.MOV"
         posterImage="/images/IMG_8538.jpeg"
@@ -140,7 +140,7 @@ export default function Home() {
       />
 
       {/* Introduction Section */}
-      <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-cream-light">
+      <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-cream-light">
         <ScrollReveal>
           <div className="max-w-3xl mx-auto text-center">
             <div className="w-16 h-px bg-burgundy/30 mx-auto mb-8" />
@@ -160,7 +160,7 @@ export default function Home() {
 
       {/* Three Feature Cards */}
       <section
-        className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-cream"
+        className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-cream"
         aria-label="What makes us special"
       >
         <div className="max-w-6xl mx-auto">
@@ -205,14 +205,15 @@ export default function Home() {
       </section>
 
       {/* Current Releases - Wine Showcase */}
-      <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-cream-light">
+      <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-cream">
         <div className="max-w-5xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-16">
-              <h2 className="font-serif text-3xl sm:text-4xl text-burgundy mb-2">
+              <div className="w-16 h-px bg-burgundy/30 mx-auto mb-6" />
+              <h2 className="font-serif text-3xl sm:text-4xl text-burgundy">
                 Current Releases
               </h2>
-              <div className="w-16 h-px bg-burgundy/30 mx-auto mt-4" />
+              <div className="w-16 h-px bg-burgundy/30 mx-auto mt-6" />
             </div>
           </ScrollReveal>
 
@@ -220,13 +221,13 @@ export default function Home() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 sm:gap-16 max-w-3xl mx-auto">
               {/* Cabernet Franc */}
               <div className="text-center group">
-                <div className="relative mb-6 bg-cream rounded-sm p-6 sm:p-8 shadow-sm group-hover:shadow-md transition-shadow duration-300">
+                <div className="relative mb-6 p-6 sm:p-8">
                   <Image
                     src="/images/cabernet-franc-2023.png"
                     alt="Cresta Bella Vineyards 2023 Cabernet Franc, small batch wine from La Cresta California"
                     width={300}
                     height={450}
-                    className="mx-auto h-auto"
+                    className="mx-auto h-auto drop-shadow-xl"
                   />
                 </div>
                 <h3 className="font-serif text-xl text-burgundy">
@@ -241,13 +242,13 @@ export default function Home() {
 
               {/* Cabernet Sauvignon */}
               <div className="text-center group">
-                <div className="relative mb-6 bg-cream rounded-sm p-6 sm:p-8 shadow-sm group-hover:shadow-md transition-shadow duration-300">
+                <div className="relative mb-6 p-6 sm:p-8">
                   <Image
                     src="/images/cabernet-sauvignon-2023.png"
                     alt="Cresta Bella Vineyards 2023 Cabernet Sauvignon, estate-grown small batch wine"
                     width={300}
                     height={450}
-                    className="mx-auto h-auto"
+                    className="mx-auto h-auto drop-shadow-xl"
                   />
                 </div>
                 <h3 className="font-serif text-xl text-burgundy">
@@ -287,12 +288,12 @@ export default function Home() {
         <ScrollReveal>
           <div className="relative z-10 max-w-4xl mx-auto text-center">
             <blockquote>
-              <p className="font-serif text-2xl sm:text-3xl md:text-4xl italic text-cream-light leading-relaxed">
+              <p className="font-serif text-3xl sm:text-4xl md:text-5xl italic text-cream-light leading-relaxed tracking-wide">
                 &ldquo;Where the vines meet the sky.&rdquo;
               </p>
             </blockquote>
-            <div className="mt-6 w-12 h-px bg-cream/30 mx-auto" />
-            <p className="mt-4 text-sm tracking-widest uppercase text-cream/50">
+            <div className="mt-8 w-12 h-px bg-cream/30 mx-auto" />
+            <p className="mt-5 text-xs sm:text-sm tracking-[0.2em] uppercase font-sans text-cream/50">
               La Cresta, California &middot; Santa Rosa Plateau
             </p>
           </div>
@@ -300,12 +301,12 @@ export default function Home() {
       </section>
 
       {/* Pre-footer CTA */}
-      <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-cream-light text-center">
+      <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-cream-dark text-center">
         <ScrollReveal>
-          <h2 className="font-serif text-2xl sm:text-3xl text-burgundy mb-4">
+          <h2 className="font-serif text-3xl sm:text-4xl text-burgundy mb-6">
             Visit the Vineyard
           </h2>
-          <p className="text-charcoal/60 max-w-lg mx-auto mb-8">
+          <p className="text-charcoal/60 max-w-lg mx-auto mb-10 leading-relaxed">
             We love having people out to the property. If you want to see the
             vines, taste what we have been working on, or just take in the view
             with a glass in hand, we would love to have you. Tastings are by
@@ -313,7 +314,7 @@ export default function Home() {
           </p>
           <a
             href="/contact"
-            className="inline-block px-8 py-3 bg-burgundy text-cream-light text-sm tracking-widest uppercase hover:bg-burgundy-deep transition-colors duration-200"
+            className="inline-block px-10 py-4 border-2 border-burgundy text-burgundy text-sm tracking-[0.2em] uppercase hover:bg-burgundy hover:text-cream-light transition-all duration-300"
           >
             Get in Touch
           </a>

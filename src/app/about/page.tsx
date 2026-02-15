@@ -303,7 +303,7 @@ export default function AboutPage() {
         />
         <ScrollReveal>
           <div className="relative z-10 max-w-3xl mx-auto text-center">
-            <p className="font-serif text-2xl sm:text-3xl italic text-cream-light leading-relaxed">
+            <p className="font-serif text-3xl sm:text-4xl italic text-cream-light leading-relaxed tracking-wide">
               &ldquo;Good wine takes care of itself when you know your vines
               the way you know your family.&rdquo;
             </p>
@@ -312,18 +312,18 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-cream text-center">
+      <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-cream-dark text-center">
         <ScrollReveal>
-          <h2 className="font-serif text-2xl sm:text-3xl text-burgundy mb-4">
+          <h2 className="font-serif text-3xl sm:text-4xl text-burgundy mb-6">
             Come See for Yourself
           </h2>
-          <p className="text-charcoal/60 max-w-lg mx-auto mb-8">
+          <p className="text-charcoal/60 max-w-lg mx-auto mb-10 leading-relaxed">
             We welcome visitors by appointment. Experience the vineyard, taste
             the wines, and take in views you will not forget.
           </p>
           <a
             href="/contact"
-            className="inline-block px-8 py-3 bg-burgundy text-cream-light text-sm tracking-widest uppercase hover:bg-burgundy-deep transition-colors duration-200"
+            className="inline-block px-10 py-4 border-2 border-burgundy text-burgundy text-sm tracking-[0.2em] uppercase hover:bg-burgundy hover:text-cream-light transition-all duration-300"
           >
             Schedule a Visit
           </a>

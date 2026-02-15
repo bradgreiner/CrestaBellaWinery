@@ -5,8 +5,8 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-burgundy-deep text-cream/80">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <footer className="bg-burgundy-deep text-cream/80 border-t border-cream/5">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
           {/* Brand Column */}
           <div className="text-center md:text-left">
@@ -31,11 +31,11 @@ export default function Footer() {
 
           {/* Navigation Column */}
           <div className="text-center">
-            <h3 className="font-serif text-lg text-cream-light mb-4">
+            <h3 className="text-xs tracking-[0.2em] uppercase font-sans text-cream-light mb-6">
               Explore
             </h3>
             <nav aria-label="Footer navigation">
-              <ul className="space-y-2">
+              <ul className="space-y-3">
                 <li>
                   <Link
                     href="/"
@@ -66,7 +66,7 @@ export default function Footer() {
 
           {/* Contact Column */}
           <div className="text-center md:text-right">
-            <h3 className="font-serif text-lg text-cream-light mb-4">
+            <h3 className="text-xs tracking-[0.2em] uppercase font-sans text-cream-light mb-6">
               Get in Touch
             </h3>
             <p className="text-sm text-cream/70 font-medium mb-2">
@@ -97,7 +97,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-cream/10 text-center">
+        <div className="mt-16 pt-8 border-t border-cream/10 text-center">
           <p className="text-xs text-cream/40">
             &copy; {currentYear} Cresta Bella Vineyards. All rights reserved.
           </p>

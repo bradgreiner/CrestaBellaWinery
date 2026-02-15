@@ -100,24 +100,31 @@ export default function VideoHero({
 
       {/* Dark gradient overlay for text readability */}
       <div
-        className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60"
+        className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60"
         aria-hidden="true"
       />
+
+      {/* Radial gradient for extra darkness behind center content */}
+      {isHome && (
+        <div
+          className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.35)_0%,transparent_70%)]"
+          aria-hidden="true"
+        />
+      )}
 
       {/* Content */}
       <div className="relative z-10 px-4 sm:px-6 max-w-4xl mx-auto">
         {isHome && (
           <div className="mb-8 animate-fade-in">
-            <div className="inline-block mb-6">
-              <Image
-                src="/images/logo.png"
-                alt="Cresta Bella Vineyards logo"
-                width={180}
-                height={180}
-                className="mx-auto"
-                priority
-              />
-            </div>
+            <Image
+              src="/images/logo.png"
+              alt="Cresta Bella Vineyards logo"
+              width={180}
+              height={180}
+              className="mx-auto drop-shadow-lg"
+              style={{ mixBlendMode: "multiply" }}
+              priority
+            />
           </div>
         )}
 
@@ -133,8 +140,10 @@ export default function VideoHero({
 
         {subtitle && (
           <p
-            className={`mt-4 sm:mt-6 font-serif italic text-cream/70 ${
-              isHome ? "text-xl sm:text-2xl md:text-3xl" : "text-lg sm:text-xl"
+            className={`mt-4 sm:mt-6 text-cream/70 ${
+              isHome
+                ? "text-sm sm:text-base tracking-[0.15em] uppercase font-light"
+                : "font-serif italic text-lg sm:text-xl"
             }`}
           >
             {subtitle}
@@ -148,7 +157,7 @@ export default function VideoHero({
           >
             <a
               href={ctaHref}
-              className="inline-block px-8 py-3 border border-cream/40 text-cream/80 text-sm tracking-widest uppercase hover:bg-cream/10 hover:border-cream/60 transition-all duration-300"
+              className="inline-block px-10 py-4 border-2 border-cream/40 text-cream/80 text-sm tracking-[0.2em] uppercase hover:bg-cream/10 hover:border-cream/60 transition-all duration-300"
             >
               {ctaText || "Learn More"}
             </a>
