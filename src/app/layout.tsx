@@ -32,9 +32,9 @@ export const metadata: Metadata = {
       "Family-owned small batch winery on the Santa Rosa Plateau in La Cresta, California. Estate-grown grapes and handcrafted wines near Temecula Valley.",
     images: [
       {
-        url: "/images/og-image.jpg",
-        width: 1200,
-        height: 630,
+        url: "/images/cabernet-sauvignon-2023.png",
+        width: 1024,
+        height: 1024,
         alt: "Cresta Bella Vineyards - Small Batch Winery on the Santa Rosa Plateau",
       },
     ],

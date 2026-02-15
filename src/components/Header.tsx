@@ -48,7 +48,7 @@ export default function Header() {
             aria-label="Cresta Bella Vineyards - Home"
           >
             <Image
-              src="/images/ChatGPT_Image_Sep_19__2025__12_52_16_PM.png"
+              src="/images/logo.png"
               alt="Cresta Bella Vineyards logo"
               width={60}
               height={60}

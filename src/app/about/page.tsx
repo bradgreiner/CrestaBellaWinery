@@ -74,7 +74,7 @@ export default function AboutPage() {
             <ScrollReveal>
               <div className="relative">
                 <Image
-                  src="/images/IMG_2655.jpeg"
+                  src="/images/don-and-diane.jpeg"
                   alt="Don and Diane Greiner, proprietors of Cresta Bella Vineyards"
                   width={600}
                   height={500}
@@ -184,7 +184,7 @@ export default function AboutPage() {
             <ScrollReveal>
               <div className="relative order-2 md:order-1">
                 <Image
-                  src="/images/IMG_0977.JPG"
+                  src="/images/barrel-room.jpg"
                   alt="Don and Diane Greiner tasting wine in the barrel room"
                   width={600}
                   height={500}

@@ -93,7 +93,7 @@ export default function Home() {
               <div className="text-center group">
                 <div className="relative mb-6 bg-cream rounded-sm p-6 sm:p-8 shadow-sm group-hover:shadow-md transition-shadow duration-300">
                   <Image
-                    src="/images/ChatGPT_Image_Sep_19__2025__12_52_13_PM.png"
+                    src="/images/cabernet-franc-2023.png"
                     alt="Cresta Bella Vineyards 2023 Cabernet Franc, small batch wine from La Cresta California"
                     width={300}
                     height={450}
@@ -110,7 +110,7 @@ export default function Home() {
               <div className="text-center group">
                 <div className="relative mb-6 bg-cream rounded-sm p-6 sm:p-8 shadow-sm group-hover:shadow-md transition-shadow duration-300">
                   <Image
-                    src="/images/ChatGPT_Image_Sep_19__2025__12_52_10_PM.png"
+                    src="/images/cabernet-sauvignon-2023.png"
                     alt="Cresta Bella Vineyards 2023 Cabernet Sauvignon, estate-grown small batch wine"
                     width={300}
                     height={450}

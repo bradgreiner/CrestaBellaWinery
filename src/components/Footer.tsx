@@ -12,7 +12,7 @@ export default function Footer() {
           <div className="text-center md:text-left">
             <div className="mb-4">
               <Image
-                src="/images/ChatGPT_Image_Sep_19__2025__12_52_16_PM.png"
+                src="/images/logo.png"
                 alt="Cresta Bella Vineyards logo"
                 width={120}
                 height={120}
