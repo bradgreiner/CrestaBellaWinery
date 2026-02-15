@@ -44,6 +44,7 @@ export default function VideoHero({
   }, []);
 
   const hasVideo = (videoMp4 || videoMov) && !videoFailed;
+  const objectPosition = isHome ? "object-[center_35%]" : "object-[center_60%]";
 
   return (
     <section
@@ -62,7 +63,7 @@ export default function VideoHero({
           playsInline
           poster={posterImage}
           onError={() => setVideoFailed(true)}
-          className="absolute inset-0 w-full h-full object-cover object-bottom"
+          className={`absolute inset-0 w-full h-full object-cover ${objectPosition}`}
         >
           {videoMp4 && <source src={videoMp4} type="video/mp4" />}
           {videoMov && <source src={videoMov} type="video/quicktime" />}
@@ -76,7 +77,7 @@ export default function VideoHero({
           alt=""
           fill
           priority
-          className="object-cover object-bottom"
+          className={`object-cover ${objectPosition}`}
           aria-hidden="true"
         />
       )}
