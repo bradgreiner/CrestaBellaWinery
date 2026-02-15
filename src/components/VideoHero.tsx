@@ -117,12 +117,11 @@ export default function VideoHero({
         {isHome && (
           <div className="mb-8 animate-fade-in">
             <Image
-              src="/images/logo.png"
+              src="/images/cresta_bella_transparent_refined.png"
               alt="Cresta Bella Vineyards logo"
-              width={180}
-              height={180}
+              width={216}
+              height={216}
               className="mx-auto drop-shadow-lg"
-              style={{ mixBlendMode: "multiply" }}
               priority
             />
           </div>

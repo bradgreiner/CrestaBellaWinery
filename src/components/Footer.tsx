@@ -12,11 +12,11 @@ export default function Footer() {
           <div className="text-center md:text-left">
             <div className="mb-4">
               <Image
-                src="/images/logo.png"
+                src="/images/cresta_bella_transparent_refined.png"
                 alt="Cresta Bella Vineyards logo"
                 width={120}
                 height={120}
-                className="mx-auto md:mx-0 brightness-110"
+                className="mx-auto md:mx-0"
               />
             </div>
             <p className="text-sm leading-relaxed text-cream/60">

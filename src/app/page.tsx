@@ -17,11 +17,11 @@ const winerySchema = {
   email: "dongreiner1957@gmail.com",
   image: [
     "https://www.crestabellawinery.com/images/IMG_8538.jpeg",
-    "https://www.crestabellawinery.com/images/logo.png",
+    "https://www.crestabellawinery.com/images/cresta_bella_transparent_refined.png",
     "https://www.crestabellawinery.com/images/cabernet-franc-2023.png",
     "https://www.crestabellawinery.com/images/cabernet-sauvignon-2023.png",
   ],
-  logo: "https://www.crestabellawinery.com/images/logo.png",
+  logo: "https://www.crestabellawinery.com/images/cresta_bella_transparent_refined.png",
   address: {
     "@type": "PostalAddress",
     addressLocality: "La Cresta",

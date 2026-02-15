@@ -61,12 +61,12 @@ export default function Header() {
               aria-label="Cresta Bella Vineyards - Home"
             >
               <Image
-                src="/images/logo.png"
+                src="/images/cresta_bella_transparent_refined.png"
                 alt="Cresta Bella Vineyards logo"
-                width={56}
-                height={56}
-                className={`h-10 md:h-14 w-auto transition-all duration-300 ${
-                  isScrolled ? "" : "brightness-110 drop-shadow-md"
+                width={73}
+                height={73}
+                className={`h-[52px] md:h-[73px] w-auto transition-all duration-300 ${
+                  isScrolled ? "" : "drop-shadow-md"
                 }`}
                 priority
               />
