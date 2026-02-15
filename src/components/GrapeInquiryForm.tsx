@@ -30,11 +30,9 @@ export default function GrapeInquiryForm() {
       // Fallback: open mailto
       const name = formData.get("name") as string;
       const email = formData.get("email") as string;
-      const varietals = formData.get("varietals") as string;
-      const quantity = formData.get("quantity") as string;
       const message = formData.get("message") as string;
       window.location.href = `mailto:dongreiner1957@gmail.com?subject=Grape Inquiry from ${name}&body=${encodeURIComponent(
-        `From: ${name} (${email})\nVarietals: ${varietals}\nQuantity: ${quantity}\n\n${message}`
+        `From: ${name} (${email})\n\n${message}`
       )}`;
     } finally {
       setIsSubmitting(false);
@@ -110,72 +108,19 @@ export default function GrapeInquiryForm() {
 
       <div>
         <label
-          htmlFor="grape-phone"
-          className="block text-sm font-medium text-charcoal/80 mb-1"
-        >
-          Phone <span className="text-charcoal/40">(optional)</span>
-        </label>
-        <input
-          type="tel"
-          id="grape-phone"
-          name="phone"
-          autoComplete="tel"
-          className="w-full px-4 py-3 bg-cream-light border border-cream-dark rounded-sm text-charcoal placeholder:text-charcoal/30 focus:outline-none focus:ring-2 focus:ring-burgundy/30 focus:border-burgundy/50 transition-colors"
-          placeholder="(555) 123-4567"
-        />
-      </div>
-
-      <div>
-        <label
-          htmlFor="grape-varietals"
-          className="block text-sm font-medium text-charcoal/80 mb-1"
-        >
-          Grape Varietals of Interest{" "}
-          <span className="text-burgundy" aria-hidden="true">*</span>
-          <span className="sr-only">(required)</span>
-        </label>
-        <input
-          type="text"
-          id="grape-varietals"
-          name="varietals"
-          required
-          className="w-full px-4 py-3 bg-cream-light border border-cream-dark rounded-sm text-charcoal placeholder:text-charcoal/30 focus:outline-none focus:ring-2 focus:ring-burgundy/30 focus:border-burgundy/50 transition-colors"
-          placeholder="e.g., Cabernet Sauvignon, Syrah, Sangiovese"
-        />
-      </div>
-
-      <div>
-        <label
-          htmlFor="grape-quantity"
-          className="block text-sm font-medium text-charcoal/80 mb-1"
-        >
-          Estimated Quantity{" "}
-          <span className="text-burgundy" aria-hidden="true">*</span>
-          <span className="sr-only">(required)</span>
-        </label>
-        <input
-          type="text"
-          id="grape-quantity"
-          name="quantity"
-          required
-          className="w-full px-4 py-3 bg-cream-light border border-cream-dark rounded-sm text-charcoal placeholder:text-charcoal/30 focus:outline-none focus:ring-2 focus:ring-burgundy/30 focus:border-burgundy/50 transition-colors"
-          placeholder="e.g., 500 lbs, 1 ton"
-        />
-      </div>
-
-      <div>
-        <label
           htmlFor="grape-message"
           className="block text-sm font-medium text-charcoal/80 mb-1"
         >
-          Message / Notes
+          Message <span className="text-burgundy" aria-hidden="true">*</span>
+          <span className="sr-only">(required)</span>
         </label>
         <textarea
           id="grape-message"
           name="message"
-          rows={4}
+          required
+          rows={5}
           className="w-full px-4 py-3 bg-cream-light border border-cream-dark rounded-sm text-charcoal placeholder:text-charcoal/30 focus:outline-none focus:ring-2 focus:ring-burgundy/30 focus:border-burgundy/50 transition-colors resize-vertical"
-          placeholder="Any additional details about your needs..."
+          placeholder="Varietals of interest, estimated quantity, and any other details..."
         />
       </div>
 
