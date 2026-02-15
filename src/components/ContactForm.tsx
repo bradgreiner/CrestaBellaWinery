@@ -14,10 +14,7 @@ export default function ContactForm() {
     const formData = new FormData(form);
 
     try {
-      // TODO: Replace with your Formspree or Web3Forms endpoint
-      // Example: https://formspree.io/f/YOUR_FORM_ID
-      // For now, using Formspree placeholder
-      const response = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+      const response = await fetch("https://formspree.io/f/mykdwppq", {
         method: "POST",
         body: formData,
         headers: {

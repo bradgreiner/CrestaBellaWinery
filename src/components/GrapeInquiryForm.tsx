@@ -14,9 +14,7 @@ export default function GrapeInquiryForm() {
     const formData = new FormData(form);
 
     try {
-      // TODO: Replace with your Formspree or Web3Forms endpoint
-      // Example: https://formspree.io/f/YOUR_FORM_ID
-      const response = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+      const response = await fetch("https://formspree.io/f/meelgzlj", {
         method: "POST",
         body: formData,
         headers: {
