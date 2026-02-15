@@ -84,9 +84,9 @@ export default function ContactPage() {
                   Contact Us
                 </h2>
                 <p className="text-charcoal/60 leading-relaxed mb-8">
-                  Whether you have questions about our wines, want to learn more
-                  about the vineyard, or just want to say hello — we are happy
-                  to hear from you.
+                  Whether you have questions about our wines, want to plan a
+                  visit to the vineyard, or simply want to say hello — we would
+                  love to hear from you and will respond as soon as we can.
                 </p>
 
                 <div className="bg-cream p-6 sm:p-8 rounded-sm flex-1">
