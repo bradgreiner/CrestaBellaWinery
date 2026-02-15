@@ -48,7 +48,7 @@ export default function VideoHero({
   return (
     <section
       className={`relative flex items-center justify-center text-center overflow-hidden ${
-        isHome ? "min-h-screen" : "min-h-[50vh]"
+        isHome ? "min-h-screen" : "min-h-[70vh]"
       }`}
       aria-label={isHome ? "Welcome to Cresta Bella Vineyards" : title}
     >
@@ -62,7 +62,7 @@ export default function VideoHero({
           playsInline
           poster={posterImage}
           onError={() => setVideoFailed(true)}
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover object-bottom"
         >
           {videoMp4 && <source src={videoMp4} type="video/mp4" />}
           {videoMov && <source src={videoMov} type="video/quicktime" />}
@@ -76,7 +76,7 @@ export default function VideoHero({
           alt=""
           fill
           priority
-          className="object-cover"
+          className="object-cover object-bottom"
           aria-hidden="true"
         />
       )}
