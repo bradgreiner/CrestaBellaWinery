@@ -46,7 +46,7 @@ export default function Home() {
           </ScrollReveal>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-            <ScrollReveal>
+            <ScrollReveal className="h-full">
               <FeatureCard
                 icon="vineyard"
                 title="The Vineyard"
@@ -56,7 +56,7 @@ export default function Home() {
               />
             </ScrollReveal>
 
-            <ScrollReveal>
+            <ScrollReveal className="h-full">
               <FeatureCard
                 icon="winemaking"
                 title="Small Batch Process"
@@ -66,7 +66,7 @@ export default function Home() {
               />
             </ScrollReveal>
 
-            <ScrollReveal>
+            <ScrollReveal className="h-full">
               <FeatureCard
                 icon="grapes"
                 title="Grapes for Purchase"

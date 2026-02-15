@@ -79,20 +79,20 @@ export default function FeatureCard({
   linkText,
 }: FeatureCardProps) {
   return (
-    <div className="group text-center p-8 rounded-sm bg-cream-light hover:bg-cream transition-colors duration-300">
+    <div className="group flex flex-col h-full text-center p-8 rounded-sm bg-cream-light hover:bg-cream transition-colors duration-300">
       <div className="mb-6 flex justify-center">
         <CardIcon type={icon} />
       </div>
       <h3 className="font-serif text-xl sm:text-2xl text-burgundy mb-3">
         {title}
       </h3>
-      <p className="text-charcoal/70 leading-relaxed text-sm sm:text-base mb-4">
+      <p className="text-charcoal/70 leading-relaxed text-sm sm:text-base mb-4 flex-1">
         {description}
       </p>
       {href && linkText && (
         <Link
           href={href}
-          className="inline-block text-sm tracking-wider uppercase text-burgundy/70 hover:text-burgundy transition-colors border-b border-burgundy/30 hover:border-burgundy/60 pb-0.5"
+          className="inline-block text-sm tracking-wider uppercase text-burgundy/70 hover:text-burgundy transition-colors border-b border-burgundy/30 hover:border-burgundy/60 pb-0.5 mt-auto"
         >
           {linkText}
         </Link>
