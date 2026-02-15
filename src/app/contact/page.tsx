@@ -78,8 +78,8 @@ export default function ContactPage() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
             {/* Left Column: General Contact */}
-            <ScrollReveal>
-              <div>
+            <ScrollReveal className="h-full">
+              <div className="flex flex-col h-full">
                 <h2 className="font-serif text-2xl sm:text-3xl text-burgundy mb-3">
                   Contact Us
                 </h2>
@@ -89,26 +89,25 @@ export default function ContactPage() {
                   to hear from you.
                 </p>
 
-                <div className="bg-cream p-6 sm:p-8 rounded-sm">
+                <div className="bg-cream p-6 sm:p-8 rounded-sm flex-1">
                   <ContactForm />
                 </div>
               </div>
             </ScrollReveal>
 
             {/* Right Column: Grape Purchase Inquiries */}
-            <ScrollReveal>
-              <div>
+            <ScrollReveal className="h-full">
+              <div className="flex flex-col h-full">
                 <h2 className="font-serif text-2xl sm:text-3xl text-burgundy mb-3">
                   Grape Purchase Inquiries
                 </h2>
                 <p className="text-charcoal/60 leading-relaxed mb-8">
                   Each year, we offer a limited quantity of estate-grown grapes
-                  to home winemakers and fellow producers. Availability varies
-                  by season and harvest conditions. Submit your interest below
-                  and we will be in touch.
+                  to home winemakers and fellow producers. Submit your interest
+                  below and we will be in touch.
                 </p>
 
-                <div className="bg-cream p-6 sm:p-8 rounded-sm">
+                <div className="bg-cream p-6 sm:p-8 rounded-sm flex-1">
                   <GrapeInquiryForm />
                 </div>
               </div>
