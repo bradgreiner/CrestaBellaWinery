@@ -28,120 +28,135 @@ export default function Header() {
     setIsMenuOpen(false);
   }, [pathname]);
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMenuOpen]);
+
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-cream-light/95 backdrop-blur-sm shadow-sm"
-          : "bg-transparent border-b border-white/20"
-      }`}
-    >
-      <nav
-        className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
-        aria-label="Main navigation"
+    <>
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled
+            ? "bg-cream-light/95 backdrop-blur-sm shadow-sm"
+            : "bg-transparent border-b border-white/20"
+        }`}
       >
-        <div
-          className={`flex items-center justify-center transition-all duration-300 ${
-            isScrolled ? "h-16" : "h-20"
-          }`}
+        <nav
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+          aria-label="Main navigation"
         >
-          {/* Logo - only visible when scrolled */}
-          <Link
-            href="/"
-            className={`absolute left-4 sm:left-6 lg:left-8 flex-shrink-0 transition-all duration-300 ${
-              isScrolled
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 -translate-y-2 pointer-events-none"
-            }`}
-            aria-label="Cresta Bella Vineyards - Home"
-            tabIndex={isScrolled ? 0 : -1}
-          >
-            <Image
-              src="/images/logo.png"
-              alt="Cresta Bella Vineyards logo"
-              width={40}
-              height={40}
-              className="transition-all duration-300"
-              priority
-            />
-          </Link>
-
-          {/* Desktop Navigation - centered */}
-          <div className="hidden md:flex items-center space-x-10">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`text-sm tracking-[0.2em] uppercase font-sans transition-colors duration-200 ${
-                  pathname === link.href
-                    ? isScrolled
-                      ? "text-burgundy"
-                      : "text-cream-light"
-                    : isScrolled
-                    ? "text-charcoal/60 hover:text-burgundy"
-                    : "text-cream-light/80 hover:text-cream-light"
+          <div className="flex items-center justify-between py-5 sm:py-6">
+            {/* Logo - always visible, top left, links to home */}
+            <Link
+              href="/"
+              className="flex-shrink-0 transition-opacity hover:opacity-80"
+              aria-label="Cresta Bella Vineyards - Home"
+            >
+              <Image
+                src="/images/logo.png"
+                alt="Cresta Bella Vineyards logo"
+                width={56}
+                height={56}
+                className={`h-10 md:h-14 w-auto transition-all duration-300 ${
+                  isScrolled ? "" : "brightness-110 drop-shadow-md"
                 }`}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
+                priority
+              />
+            </Link>
 
-          {/* Mobile Menu Button - right aligned */}
-          <button
-            type="button"
-            className="md:hidden absolute right-4 sm:right-6 p-2"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-expanded={isMenuOpen}
-            aria-controls="mobile-menu"
-            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          >
-            <div className="w-6 h-5 flex flex-col justify-between">
-              <span
-                className={`block h-0.5 rounded transition-all duration-300 ${
-                  isScrolled ? "bg-charcoal" : "bg-cream-light"
-                } ${isMenuOpen ? "rotate-45 translate-y-2" : ""}`}
-              />
-              <span
-                className={`block h-0.5 rounded transition-all duration-300 ${
-                  isScrolled ? "bg-charcoal" : "bg-cream-light"
-                } ${isMenuOpen ? "opacity-0" : ""}`}
-              />
-              <span
-                className={`block h-0.5 rounded transition-all duration-300 ${
-                  isScrolled ? "bg-charcoal" : "bg-cream-light"
-                } ${isMenuOpen ? "-rotate-45 -translate-y-2" : ""}`}
-              />
+            {/* Desktop Navigation - right aligned */}
+            <div className="hidden md:flex items-center gap-10">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`text-base lg:text-lg tracking-[0.2em] uppercase font-sans transition-colors duration-200 ${
+                    pathname === link.href
+                      ? isScrolled
+                        ? "text-burgundy"
+                        : "text-cream-light"
+                      : isScrolled
+                      ? "text-charcoal/60 hover:text-burgundy"
+                      : "text-cream-light/80 hover:text-cream-light"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              ))}
             </div>
-          </button>
-        </div>
 
-        {/* Mobile Menu */}
-        <div
-          id="mobile-menu"
-          className={`md:hidden transition-all duration-300 overflow-hidden ${
-            isMenuOpen ? "max-h-60 pb-4" : "max-h-0"
-          }`}
-          role="menu"
-        >
-          <div className="bg-cream-light/95 backdrop-blur-sm rounded-lg p-4 mt-2 shadow-lg">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                role="menuitem"
-                className={`block py-3 px-4 text-sm tracking-[0.2em] uppercase font-sans transition-colors ${
-                  pathname === link.href
-                    ? "text-burgundy"
-                    : "text-charcoal/70 hover:text-burgundy"
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {/* Mobile Menu Button - right aligned, min 44x44 tap target */}
+            <button
+              type="button"
+              className="md:hidden p-3 -mr-3 min-w-[44px] min-h-[44px] flex items-center justify-center"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-menu"
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            >
+              <div className="w-7 h-5 flex flex-col justify-between">
+                <span
+                  className={`block h-0.5 rounded transition-all duration-300 origin-center ${
+                    isScrolled ? "bg-charcoal" : "bg-cream-light"
+                  } ${isMenuOpen ? "rotate-45 translate-y-[9px]" : ""}`}
+                />
+                <span
+                  className={`block h-0.5 rounded transition-all duration-300 ${
+                    isScrolled ? "bg-charcoal" : "bg-cream-light"
+                  } ${isMenuOpen ? "opacity-0" : ""}`}
+                />
+                <span
+                  className={`block h-0.5 rounded transition-all duration-300 origin-center ${
+                    isScrolled ? "bg-charcoal" : "bg-cream-light"
+                  } ${isMenuOpen ? "-rotate-45 -translate-y-[9px]" : ""}`}
+                />
+              </div>
+            </button>
           </div>
+        </nav>
+      </header>
+
+      {/* Full-screen Mobile Menu Overlay */}
+      <div
+        id="mobile-menu"
+        className={`fixed inset-0 z-40 md:hidden transition-all duration-300 ${
+          isMenuOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
+        }`}
+        role="menu"
+      >
+        <div className="absolute inset-0 bg-burgundy-deep/98 backdrop-blur-sm" />
+        <div className="relative z-10 flex flex-col items-center justify-center min-h-screen gap-8">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              role="menuitem"
+              onClick={() => setIsMenuOpen(false)}
+              className={`text-2xl tracking-[0.2em] uppercase font-sans transition-colors duration-200 ${
+                pathname === link.href
+                  ? "text-cream-light"
+                  : "text-cream/60 hover:text-cream-light"
+              }`}
+            >
+              {link.label}
+            </Link>
+          ))}
+          <div className="mt-8 w-12 h-px bg-cream/20" />
+          <p className="text-xs tracking-[0.15em] uppercase text-cream/30 font-sans">
+            Cresta Bella Vineyards
+          </p>
         </div>
-      </nav>
-    </header>
+      </div>
+    </>
   );
 }

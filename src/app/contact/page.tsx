@@ -74,7 +74,7 @@ export default function ContactPage() {
       />
 
       {/* Two Column Forms */}
-      <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-cream-light">
+      <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-cream-light">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
             {/* Left Column: General Contact */}
@@ -150,10 +150,10 @@ export default function ContactPage() {
       </section>
 
       {/* Location Section */}
-      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-cream">
+      <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-cream">
         <div className="max-w-4xl mx-auto text-center">
           <ScrollReveal>
-            <h2 className="font-serif text-2xl sm:text-3xl text-burgundy mb-6">
+            <h2 className="font-serif text-3xl sm:text-4xl text-burgundy mb-6">
               Find Us
             </h2>
 
