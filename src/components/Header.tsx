@@ -53,7 +53,7 @@ export default function Header() {
           className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
           aria-label="Main navigation"
         >
-          <div className="flex items-center justify-between py-5 sm:py-6">
+          <div className="flex items-center justify-between py-2 sm:py-3">
             {/* Logo - always visible, top left, links to home */}
             <Link
               href="/"
