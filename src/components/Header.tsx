@@ -53,7 +53,7 @@ export default function Header() {
           className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
           aria-label="Main navigation"
         >
-          <div className="flex items-center justify-between py-2 sm:py-3">
+          <div className="flex items-center justify-between py-1 sm:py-1">
             {/* Logo - always visible, top left, links to home */}
             <Link
               href="/"
@@ -65,7 +65,7 @@ export default function Header() {
                 alt="Cresta Bella Vineyards logo"
                 width={150}
                 height={150}
-                className={`h-[125px] md:h-[150px] w-auto transition-all duration-300 ${
+                className={`h-[100px] md:h-[120px] w-auto transition-all duration-300 ${
                   isScrolled ? "" : "drop-shadow-md"
                 }`}
                 priority
