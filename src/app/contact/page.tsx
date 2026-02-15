@@ -51,37 +51,6 @@ export default function ContactPage() {
                 <div className="bg-cream p-6 sm:p-8 rounded-sm">
                   <ContactForm />
                 </div>
-
-                {/* Direct Contact Info */}
-                <div className="mt-8 pt-6 border-t border-cream-dark/50">
-                  <p className="text-sm text-charcoal/50 mb-3">
-                    Or reach us directly:
-                  </p>
-                  <div className="space-y-2">
-                    <p className="text-sm font-medium text-charcoal/80">
-                      Don Greiner, Proprietor
-                    </p>
-                    <p className="text-sm">
-                      <a
-                        href="tel:714-366-5366"
-                        className="text-burgundy hover:text-burgundy-deep transition-colors"
-                      >
-                        (714) 366-5366
-                      </a>
-                    </p>
-                    <p className="text-sm">
-                      <a
-                        href="mailto:dongreiner1957@gmail.com"
-                        className="text-burgundy hover:text-burgundy-deep transition-colors"
-                      >
-                        dongreiner1957@gmail.com
-                      </a>
-                    </p>
-                    <p className="text-sm text-charcoal/50">
-                      La Cresta, California
-                    </p>
-                  </div>
-                </div>
               </div>
             </ScrollReveal>
 
@@ -104,6 +73,39 @@ export default function ContactPage() {
               </div>
             </ScrollReveal>
           </div>
+
+          {/* Direct Contact Info */}
+          <ScrollReveal>
+            <div className="mt-12 pt-8 border-t border-cream-dark/50 text-center">
+              <p className="text-sm text-charcoal/50 mb-3">
+                Or reach us directly:
+              </p>
+              <div className="space-y-2">
+                <p className="text-sm font-medium text-charcoal/80">
+                  Don Greiner, Proprietor
+                </p>
+                <p className="text-sm">
+                  <a
+                    href="tel:714-366-5366"
+                    className="text-burgundy hover:text-burgundy-deep transition-colors"
+                  >
+                    (714) 366-5366
+                  </a>
+                </p>
+                <p className="text-sm">
+                  <a
+                    href="mailto:dongreiner1957@gmail.com"
+                    className="text-burgundy hover:text-burgundy-deep transition-colors"
+                  >
+                    dongreiner1957@gmail.com
+                  </a>
+                </p>
+                <p className="text-sm text-charcoal/50">
+                  La Cresta, California
+                </p>
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
