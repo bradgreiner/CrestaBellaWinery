@@ -27,8 +27,8 @@ export default function ContactPage() {
         variant="page"
         title="Get in Touch"
         subtitle="We would love to hear from you"
-        videoMp4="/videos/IMG_0030.mp4"
-        videoMov="/images/IMG_0030.MOV"
+        videoMp4="/videos/IMG_8540.mp4"
+        videoMov="/images/IMG_8540.MOV"
         playbackRate={0.25}
       />
 
