@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -10,13 +11,13 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="text-center md:text-left">
             <div className="mb-4">
-              <span className="font-serif text-2xl tracking-widest text-cream-light font-semibold">
-                CRESTA BELLA
-              </span>
-              <br />
-              <span className="text-xs tracking-[0.3em] uppercase text-olive-light">
-                Vineyards
-              </span>
+              <Image
+                src="/images/ChatGPT_Image_Sep_19__2025__12_52_16_PM.png"
+                alt="Cresta Bella Vineyards logo"
+                width={120}
+                height={120}
+                className="mx-auto md:mx-0 brightness-110"
+              />
             </div>
             <p className="text-sm leading-relaxed text-cream/60">
               Small batch wines from the Santa Rosa Plateau.
@@ -65,13 +66,23 @@ export default function Footer() {
             <h3 className="font-serif text-lg text-cream-light mb-4">
               Get in Touch
             </h3>
-            <p className="text-sm text-cream/60 mb-2">
-              {/* TODO: Replace with actual email */}
+            <p className="text-sm text-cream/70 font-medium mb-2">
+              Don Greiner, Proprietor
+            </p>
+            <p className="text-sm text-cream/60 mb-1">
               <a
-                href="mailto:info@crestabellawinery.com"
+                href="tel:714-366-5366"
                 className="hover:text-cream-light transition-colors"
               >
-                info@crestabellawinery.com
+                (714) 366-5366
+              </a>
+            </p>
+            <p className="text-sm text-cream/60 mb-3">
+              <a
+                href="mailto:dongreiner1957@gmail.com"
+                className="hover:text-cream-light transition-colors"
+              >
+                dongreiner1957@gmail.com
               </a>
             </p>
             <p className="text-sm text-cream/60">

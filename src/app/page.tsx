@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Hero from "@/components/Hero";
 import FeatureCard from "@/components/FeatureCard";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -74,9 +75,68 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Current Releases - Wine Showcase */}
+      <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-cream-light">
+        <div className="max-w-5xl mx-auto">
+          <ScrollReveal>
+            <div className="text-center mb-16">
+              <h2 className="font-serif text-3xl sm:text-4xl text-burgundy mb-2">
+                Current Releases
+              </h2>
+              <div className="w-16 h-px bg-burgundy/30 mx-auto mt-4" />
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 sm:gap-16 max-w-3xl mx-auto">
+              {/* Cabernet Franc */}
+              <div className="text-center group">
+                <div className="relative mb-6 bg-cream rounded-sm p-6 sm:p-8 shadow-sm group-hover:shadow-md transition-shadow duration-300">
+                  <Image
+                    src="/images/ChatGPT_Image_Sep_19__2025__12_52_13_PM.png"
+                    alt="Cresta Bella Vineyards 2023 Cabernet Franc, small batch wine from La Cresta California"
+                    width={300}
+                    height={450}
+                    className="mx-auto h-auto"
+                  />
+                </div>
+                <h3 className="font-serif text-xl text-burgundy">
+                  Cabernet Franc
+                </h3>
+                <p className="text-sm text-charcoal/50 mt-1">2023 Vintage</p>
+              </div>
+
+              {/* Cabernet Sauvignon */}
+              <div className="text-center group">
+                <div className="relative mb-6 bg-cream rounded-sm p-6 sm:p-8 shadow-sm group-hover:shadow-md transition-shadow duration-300">
+                  <Image
+                    src="/images/ChatGPT_Image_Sep_19__2025__12_52_10_PM.png"
+                    alt="Cresta Bella Vineyards 2023 Cabernet Sauvignon, estate-grown small batch wine"
+                    width={300}
+                    height={450}
+                    className="mx-auto h-auto"
+                  />
+                </div>
+                <h3 className="font-serif text-xl text-burgundy">
+                  Cabernet Sauvignon
+                </h3>
+                <p className="text-sm text-charcoal/50 mt-1">2023 Vintage</p>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <p className="text-center text-charcoal/50 text-sm mt-12 max-w-md mx-auto">
+              Estate-grown reds, handcrafted in small lots on the Santa Rosa
+              Plateau. Each bottle reflects the character of our unique terroir.
+            </p>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* Visual Break / Quote Section */}
       <section className="relative py-32 sm:py-40 px-4 sm:px-6">
-        {/* TODO: Replace with real vineyard photo background */}
+        {/* TODO: Replace with real vineyard landscape photo when available */}
         <div
           className="absolute inset-0 bg-gradient-to-r from-olive-dark/80 via-olive/70 to-burgundy/60"
           aria-hidden="true"

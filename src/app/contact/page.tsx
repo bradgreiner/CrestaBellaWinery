@@ -52,16 +52,33 @@ export default function ContactPage() {
 
                 {/* Direct Contact Info */}
                 <div className="mt-8 pt-6 border-t border-cream-dark/50">
-                  <p className="text-sm text-charcoal/50 mb-2">
+                  <p className="text-sm text-charcoal/50 mb-3">
                     Or reach us directly:
                   </p>
-                  {/* TODO: Replace with actual email */}
-                  <a
-                    href="mailto:info@crestabellawinery.com"
-                    className="text-burgundy hover:text-burgundy-deep transition-colors"
-                  >
-                    info@crestabellawinery.com
-                  </a>
+                  <div className="space-y-2">
+                    <p className="text-sm font-medium text-charcoal/80">
+                      Don Greiner, Proprietor
+                    </p>
+                    <p className="text-sm">
+                      <a
+                        href="tel:714-366-5366"
+                        className="text-burgundy hover:text-burgundy-deep transition-colors"
+                      >
+                        (714) 366-5366
+                      </a>
+                    </p>
+                    <p className="text-sm">
+                      <a
+                        href="mailto:dongreiner1957@gmail.com"
+                        className="text-burgundy hover:text-burgundy-deep transition-colors"
+                      >
+                        dongreiner1957@gmail.com
+                      </a>
+                    </p>
+                    <p className="text-sm text-charcoal/50">
+                      La Cresta, California
+                    </p>
+                  </div>
                 </div>
               </div>
             </ScrollReveal>
@@ -109,9 +126,9 @@ export default function ContactPage() {
 
               <p className="text-sm text-charcoal/50 max-w-md mx-auto">
                 Located near Murrieta and Temecula, on the Santa Rosa Plateau.
-                Our vineyard sits at the heart of one of Southern California&apos;s
-                most beautiful natural landscapes, just minutes from Temecula
-                Valley wine country.
+                Our vineyard sits at the heart of one of Southern
+                California&apos;s most beautiful natural landscapes, just
+                minutes from Temecula Valley wine country.
               </p>
 
               <div className="pt-4">

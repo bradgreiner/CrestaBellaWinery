@@ -34,7 +34,7 @@ export default function ContactForm() {
       const name = formData.get("name") as string;
       const email = formData.get("email") as string;
       const message = formData.get("message") as string;
-      window.location.href = `mailto:info@crestabellawinery.com?subject=Contact from ${name}&body=${encodeURIComponent(
+      window.location.href = `mailto:dongreiner1957@gmail.com?subject=Contact from ${name}&body=${encodeURIComponent(
         `From: ${name} (${email})\n\n${message}`
       )}`;
     } finally {

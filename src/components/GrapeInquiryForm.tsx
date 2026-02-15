@@ -35,7 +35,7 @@ export default function GrapeInquiryForm() {
       const varietals = formData.get("varietals") as string;
       const quantity = formData.get("quantity") as string;
       const message = formData.get("message") as string;
-      window.location.href = `mailto:info@crestabellawinery.com?subject=Grape Inquiry from ${name}&body=${encodeURIComponent(
+      window.location.href = `mailto:dongreiner1957@gmail.com?subject=Grape Inquiry from ${name}&body=${encodeURIComponent(
         `From: ${name} (${email})\nVarietals: ${varietals}\nQuantity: ${quantity}\n\n${message}`
       )}`;
     } finally {

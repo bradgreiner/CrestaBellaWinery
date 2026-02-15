@@ -83,8 +83,8 @@ export default function RootLayout({
               description:
                 "Family-owned small batch winery on the Santa Rosa Plateau in La Cresta, California.",
               url: "https://crestabellawinery.com",
-              telephone: "",
-              email: "info@crestabellawinery.com",
+              telephone: "714-366-5366",
+              email: "dongreiner1957@gmail.com",
               address: {
                 "@type": "PostalAddress",
                 addressLocality: "La Cresta",

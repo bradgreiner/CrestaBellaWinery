@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
@@ -46,22 +47,16 @@ export default function Header() {
             className="flex-shrink-0 transition-opacity hover:opacity-80"
             aria-label="Cresta Bella Vineyards - Home"
           >
-            <div className="flex flex-col items-center leading-tight">
-              <span
-                className={`font-serif text-xl tracking-widest font-semibold transition-colors duration-300 ${
-                  isScrolled ? "text-burgundy" : "text-cream-light"
-                }`}
-              >
-                CRESTA BELLA
-              </span>
-              <span
-                className={`text-[0.65rem] tracking-[0.25em] uppercase transition-colors duration-300 ${
-                  isScrolled ? "text-olive" : "text-cream-dark"
-                }`}
-              >
-                Vineyards
-              </span>
-            </div>
+            <Image
+              src="/images/ChatGPT_Image_Sep_19__2025__12_52_16_PM.png"
+              alt="Cresta Bella Vineyards logo"
+              width={60}
+              height={60}
+              className={`transition-all duration-300 ${
+                isScrolled ? "" : "brightness-125"
+              }`}
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}
