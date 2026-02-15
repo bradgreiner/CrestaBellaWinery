@@ -14,6 +14,8 @@ interface VideoHeroProps {
   videoMov?: string;
   /** Path to poster/fallback image */
   posterImage?: string;
+  /** Playback rate (e.g. 0.25 for very slow motion). Defaults to 1. */
+  playbackRate?: number;
   /** Show CTA button (home variant only) */
   ctaHref?: string;
   ctaText?: string;
@@ -26,6 +28,7 @@ export default function VideoHero({
   videoMp4,
   videoMov,
   posterImage,
+  playbackRate = 1,
   ctaHref,
   ctaText,
 }: VideoHeroProps) {
@@ -37,11 +40,12 @@ export default function VideoHero({
     // Attempt to play video; silently fall back if it fails
     const video = videoRef.current;
     if (video) {
+      video.playbackRate = playbackRate;
       video.play().catch(() => {
         setVideoFailed(true);
       });
     }
-  }, []);
+  }, [playbackRate]);
 
   const hasVideo = (videoMp4 || videoMov) && !videoFailed;
   const objectPosition = isHome ? "object-[center_55%]" : "object-[center_60%]";

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Hero from "@/components/Hero";
+import VideoHero from "@/components/VideoHero";
 import ContactForm from "@/components/ContactForm";
 import GrapeInquiryForm from "@/components/GrapeInquiryForm";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -23,11 +23,13 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero Banner */}
-      <Hero
+      <VideoHero
         variant="page"
         title="Get in Touch"
         subtitle="We would love to hear from you"
-        imagePlaceholder="Wine bottles on barrel with vineyard in background"
+        videoMp4="/videos/IMG_0030.mp4"
+        videoMov="/images/IMG_0030.MOV"
+        playbackRate={0.25}
       />
 
       {/* Two Column Forms */}
