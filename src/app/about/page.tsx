@@ -26,7 +26,7 @@ export default function AboutPage() {
         variant="page"
         title="Our Vineyard"
         subtitle="A family estate on the Santa Rosa Plateau"
-        videoMp4="/images/IMG_8540.mp4"
+        videoMp4="/videos/IMG_8540.mp4"
         videoMov="/images/IMG_8540.MOV"
         posterImage="/images/IMG_8538.jpeg"
       />

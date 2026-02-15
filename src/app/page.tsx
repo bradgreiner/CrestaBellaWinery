@@ -11,7 +11,7 @@ export default function Home() {
         variant="home"
         title="Cresta Bella Vineyards"
         subtitle="Small Batch Wines from the Santa Rosa Plateau"
-        videoMp4="/images/IMG_8563.mp4"
+        videoMp4="/videos/IMG_8563.mp4"
         videoMov="/images/IMG_8563.MOV"
         posterImage="/images/IMG_8538.jpeg"
         ctaHref="/about"
