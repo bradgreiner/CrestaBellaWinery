@@ -34,11 +34,14 @@ Before going live, complete these steps:
 - [x] **Formspree**: Contact form → `mykdwppq`, Grape inquiry → `meelgzlj`
 - [x] **Logo**: `logo.png` in `public/images/`
 - [x] **Photos**: Real photos in `public/images/` (barrel-room, don-and-diane, wine bottles)
-- [ ] **Videos**: Add video files to `public/videos/` and convert to MP4:
-  - `IMG_8563.MOV` → Home hero (already slow-mo)
-  - `IMG_8540.MOV` → About hero
-  - Convert both: `ffmpeg -i INPUT.MOV -vcodec h264 -acodec aac OUTPUT.mp4`
-- [ ] **Images**: Add `IMG_8081.jpeg` (grape cluster close-up) and `IMG_8538.jpeg` (sunset/plateau poster) to `public/images/`
+- [x] **Videos & Images**: All assets uploaded to `public/images/`
+- [ ] **MP4 Conversion**: MOV files only play on Safari/iOS. For Chrome/Firefox/Edge, convert to MP4 locally and upload:
+  ```bash
+  ffmpeg -i public/images/IMG_8563.MOV -vcodec h264 -acodec aac public/images/IMG_8563.mp4
+  ffmpeg -i public/images/IMG_8540.MOV -vcodec h264 -acodec aac public/images/IMG_8540.mp4
+  ffmpeg -i public/images/IMG_0030.MOV -filter:v "setpts=3.0*PTS" -an public/images/IMG_0030_slow.mp4
+  ```
+  Until MP4s are added, Chrome/Firefox users see the sunset poster image instead of video.
 - [ ] **OG Image**: Add `og-image.jpg` (1200x630) to `public/images/` for social sharing
 - [ ] **Domain**: Connect `crestabellawinery.com` via GoDaddy DNS to Vercel
 
