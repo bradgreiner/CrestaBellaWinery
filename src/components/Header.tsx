@@ -63,9 +63,9 @@ export default function Header() {
               <Image
                 src="/images/cresta_bella_transparent_refined.png"
                 alt="Cresta Bella Vineyards logo"
-                width={73}
-                height={73}
-                className={`h-[52px] md:h-[73px] w-auto transition-all duration-300 ${
+                width={96}
+                height={96}
+                className={`h-20 md:h-24 w-auto transition-all duration-300 ${
                   isScrolled ? "" : "drop-shadow-md"
                 }`}
                 priority

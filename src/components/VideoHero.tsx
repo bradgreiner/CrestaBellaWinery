@@ -114,19 +114,6 @@ export default function VideoHero({
 
       {/* Content */}
       <div className="relative z-10 px-4 sm:px-6 max-w-4xl mx-auto">
-        {isHome && (
-          <div className="mb-8 animate-fade-in">
-            <Image
-              src="/images/cresta_bella_transparent_refined.png"
-              alt="Cresta Bella Vineyards logo"
-              width={216}
-              height={216}
-              className="mx-auto drop-shadow-lg"
-              priority
-            />
-          </div>
-        )}
-
         <h1
           className={`font-serif text-cream-light leading-tight tracking-wide ${
             isHome
