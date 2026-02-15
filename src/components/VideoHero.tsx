@@ -44,7 +44,7 @@ export default function VideoHero({
   }, []);
 
   const hasVideo = (videoMp4 || videoMov) && !videoFailed;
-  const objectPosition = isHome ? "object-[center_35%]" : "object-[center_60%]";
+  const objectPosition = isHome ? "object-[center_55%]" : "object-[center_60%]";
 
   return (
     <section
