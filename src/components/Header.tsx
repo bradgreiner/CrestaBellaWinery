@@ -13,16 +13,7 @@ const navLinks = [
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100);
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   useEffect(() => {
     setIsMenuOpen(false);
@@ -43,11 +34,7 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled
-            ? "bg-cream-light/95 backdrop-blur-sm shadow-sm"
-            : "bg-transparent border-b border-white/20"
-        }`}
+        className="fixed top-0 left-0 right-0 z-50 bg-cream-light/95 backdrop-blur-sm shadow-sm"
       >
         <nav
           className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
@@ -63,11 +50,9 @@ export default function Header() {
               <Image
                 src="/images/cresta_bella_transparent_refined.png"
                 alt="Cresta Bella Vineyards logo"
-                width={96}
-                height={96}
-                className={`h-20 md:h-24 w-auto transition-all duration-300 ${
-                  isScrolled ? "" : "drop-shadow-md"
-                }`}
+                width={125}
+                height={125}
+                className="h-[104px] md:h-[125px] w-auto"
                 priority
               />
             </Link>
@@ -80,12 +65,8 @@ export default function Header() {
                   href={link.href}
                   className={`text-base lg:text-lg tracking-[0.2em] uppercase font-sans transition-colors duration-200 ${
                     pathname === link.href
-                      ? isScrolled
-                        ? "text-burgundy"
-                        : "text-cream-light"
-                      : isScrolled
-                      ? "text-charcoal/60 hover:text-burgundy"
-                      : "text-cream-light/80 hover:text-cream-light"
+                      ? "text-burgundy"
+                      : "text-charcoal/60 hover:text-burgundy"
                   }`}
                 >
                   {link.label}
@@ -104,19 +85,13 @@ export default function Header() {
             >
               <div className="w-7 h-5 flex flex-col justify-between">
                 <span
-                  className={`block h-0.5 rounded transition-all duration-300 origin-center ${
-                    isScrolled ? "bg-charcoal" : "bg-cream-light"
-                  } ${isMenuOpen ? "rotate-45 translate-y-[9px]" : ""}`}
+                  className={`block h-0.5 rounded transition-all duration-300 origin-center bg-charcoal ${isMenuOpen ? "rotate-45 translate-y-[9px]" : ""}`}
                 />
                 <span
-                  className={`block h-0.5 rounded transition-all duration-300 ${
-                    isScrolled ? "bg-charcoal" : "bg-cream-light"
-                  } ${isMenuOpen ? "opacity-0" : ""}`}
+                  className={`block h-0.5 rounded transition-all duration-300 bg-charcoal ${isMenuOpen ? "opacity-0" : ""}`}
                 />
                 <span
-                  className={`block h-0.5 rounded transition-all duration-300 origin-center ${
-                    isScrolled ? "bg-charcoal" : "bg-cream-light"
-                  } ${isMenuOpen ? "-rotate-45 -translate-y-[9px]" : ""}`}
+                  className={`block h-0.5 rounded transition-all duration-300 origin-center bg-charcoal ${isMenuOpen ? "-rotate-45 -translate-y-[9px]" : ""}`}
                 />
               </div>
             </button>
