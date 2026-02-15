@@ -7,12 +7,20 @@ import ScrollReveal from "@/components/ScrollReveal";
 export const metadata: Metadata = {
   title: "Contact Cresta Bella Vineyards | Grape Inquiries & Winery Contact",
   description:
-    "Contact Cresta Bella Vineyards in La Cresta, California. Reach out for winery inquiries or to purchase estate-grown grapes. Small batch winery on the Santa Rosa Plateau near Temecula Valley.",
+    "Contact Cresta Bella Vineyards in La Cresta, California. Reach out about tastings, wines, or purchasing estate-grown grapes. Small batch winery near Temecula Valley.",
   openGraph: {
     title: "Contact Cresta Bella Vineyards | Grape Inquiries & Winery Contact",
     description:
-      "Get in touch with Cresta Bella Vineyards for winery visits, wine inquiries, or to purchase estate-grown grapes in La Cresta, California.",
+      "Contact Cresta Bella Vineyards in La Cresta, California. Reach out about tastings, wines, or purchasing estate-grown grapes.",
     url: "https://crestabellawinery.com/contact",
+    images: [
+      {
+        url: "/images/IMG_8538.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "Cresta Bella Vineyards on the Santa Rosa Plateau at sunset",
+      },
+    ],
   },
   alternates: {
     canonical: "https://crestabellawinery.com/contact",
@@ -27,8 +35,9 @@ export default function ContactPage() {
         variant="page"
         title="Get in Touch"
         subtitle="We would love to hear from you"
-        videoMp4="/videos/IMG_0037.mp4"
-        playbackRate={0.25}
+        videoMp4="/videos/IMG_8563.mp4"
+        videoMov="/images/IMG_8563.MOV"
+        posterImage="/images/IMG_8538.jpeg"
       />
 
       {/* Two Column Forms */}

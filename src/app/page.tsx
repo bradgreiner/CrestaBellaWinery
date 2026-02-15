@@ -24,9 +24,13 @@ export default function Home() {
           <div className="max-w-3xl mx-auto text-center">
             <div className="w-16 h-px bg-burgundy/30 mx-auto mb-8" />
             <p className="font-serif text-xl sm:text-2xl md:text-3xl text-charcoal/80 leading-relaxed">
-              Nestled in the rolling hills of La Cresta, California, Cresta
-              Bella Vineyards is a family-owned estate producing small batch
-              wines with care, patience, and a view that never gets old.
+              Three generations of the Greiner family have poured their time,
+              their hands, and more than a few long weekends into this place.
+              Cresta Bella Vineyards sits on the Santa Rosa Plateau in La
+              Cresta, California, where the views stretch for miles and the
+              grapes grow at their own pace. This is small batch winemaking
+              the way it should be: personal, patient, and shared with people
+              we like.
             </p>
             <div className="w-16 h-px bg-burgundy/30 mx-auto mt-8" />
           </div>
@@ -41,7 +45,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <ScrollReveal>
             <h2 className="font-serif text-3xl sm:text-4xl text-burgundy text-center mb-16">
-              The Estate
+              The Vineyard
             </h2>
           </ScrollReveal>
 
@@ -108,6 +112,10 @@ export default function Home() {
                   Cabernet Franc
                 </h3>
                 <p className="text-sm text-charcoal/50 mt-1">2023 Vintage</p>
+                <p className="text-sm text-charcoal/60 mt-3 leading-relaxed italic">
+                  Bright and aromatic with notes of red pepper, violet, and
+                  dark cherry. Medium-bodied with a long, smooth finish.
+                </p>
               </div>
 
               {/* Cabernet Sauvignon */}
@@ -125,6 +133,10 @@ export default function Home() {
                   Cabernet Sauvignon
                 </h3>
                 <p className="text-sm text-charcoal/50 mt-1">2023 Vintage</p>
+                <p className="text-sm text-charcoal/60 mt-3 leading-relaxed italic">
+                  Rich and structured with blackcurrant, cedar, and a hint of
+                  dried herb. Full-bodied with firm tannins and depth.
+                </p>
               </div>
             </div>
           </ScrollReveal>
@@ -173,8 +185,10 @@ export default function Home() {
             Visit the Vineyard
           </h2>
           <p className="text-charcoal/60 max-w-lg mx-auto mb-8">
-            Tastings are available by appointment. We would love to share our
-            wines and our views with you.
+            We love having people out to the property. If you want to see the
+            vines, taste what we have been working on, or just take in the view
+            with a glass in hand, we would love to have you. Tastings are by
+            appointment, so just reach out and we will find a time.
           </p>
           <a
             href="/contact"

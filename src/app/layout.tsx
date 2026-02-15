@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     template: "%s | Cresta Bella Vineyards",
   },
   description:
-    "Cresta Bella Vineyards is a family-owned small batch winery on the Santa Rosa Plateau in La Cresta, California. Estate-grown grapes, handcrafted wines, and panoramic plateau views near Temecula Valley wine country.",
+    "Three generations of family winemaking on the Santa Rosa Plateau. Cresta Bella Vineyards is a small batch winery in La Cresta, CA near Temecula Valley. Estate-grown Cabernet Franc and Cabernet Sauvignon.",
   keywords: [
     "small batch winery La Cresta",
     "La Cresta vineyard",
@@ -20,6 +20,14 @@ export const metadata: Metadata = {
     "family winery Murrieta",
     "estate-grown grapes",
     "boutique winery California",
+    "Greiner family winery",
+    "La Cresta winery",
+    "wine tasting La Cresta California",
+    "Cabernet Franc La Cresta",
+    "Cabernet Sauvignon Santa Rosa Plateau",
+    "family vineyard near Temecula",
+    "boutique winery Riverside County",
+    "estate vineyard Murrieta",
   ],
   authors: [{ name: "Cresta Bella Vineyards" }],
   openGraph: {
@@ -29,13 +37,13 @@ export const metadata: Metadata = {
     siteName: "Cresta Bella Vineyards",
     title: "Cresta Bella Vineyards | Small Batch Winery in La Cresta, California",
     description:
-      "Family-owned small batch winery on the Santa Rosa Plateau in La Cresta, California. Estate-grown grapes and handcrafted wines near Temecula Valley.",
+      "Three generations of family winemaking on the Santa Rosa Plateau. Small batch winery in La Cresta, CA near Temecula Valley.",
     images: [
       {
-        url: "/images/cabernet-sauvignon-2023.png",
-        width: 1024,
-        height: 1024,
-        alt: "Cresta Bella Vineyards - Small Batch Winery on the Santa Rosa Plateau",
+        url: "/images/IMG_8538.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "Cresta Bella Vineyards on the Santa Rosa Plateau at sunset",
       },
     ],
   },
@@ -43,7 +51,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Cresta Bella Vineyards | Small Batch Winery",
     description:
-      "Family-owned small batch winery on the Santa Rosa Plateau in La Cresta, California.",
+      "Three generations of family winemaking on the Santa Rosa Plateau. Small batch winery in La Cresta, CA.",
   },
   robots: {
     index: true,

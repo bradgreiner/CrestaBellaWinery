@@ -24,6 +24,9 @@ export default function Footer() {
               <br />
               La Cresta, California.
             </p>
+            <p className="text-xs text-cream/40 mt-3 italic">
+              A Greiner family passion project.
+            </p>
           </div>
 
           {/* Navigation Column */}

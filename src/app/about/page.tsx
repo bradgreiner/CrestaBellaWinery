@@ -6,12 +6,20 @@ import ScrollReveal from "@/components/ScrollReveal";
 export const metadata: Metadata = {
   title: "About Cresta Bella Vineyards | Family Winery on the Santa Rosa Plateau",
   description:
-    "Learn about Cresta Bella Vineyards, a family-owned small batch winery nestled on the Santa Rosa Plateau in La Cresta, California. Discover our vineyard, our winemaking process, and the land that makes our wines unique.",
+    "Meet the Greiner family behind Cresta Bella Vineyards. Three generations of hands-on winemaking on the Santa Rosa Plateau in La Cresta, California. Small batch wines crafted with care.",
   openGraph: {
     title: "About Cresta Bella Vineyards | Family Winery on the Santa Rosa Plateau",
     description:
-      "Discover the story behind Cresta Bella Vineyards — a family-owned estate on the Santa Rosa Plateau producing small batch wines in La Cresta, California.",
+      "Meet the Greiner family behind Cresta Bella Vineyards. Three generations of hands-on winemaking on the Santa Rosa Plateau in La Cresta, California.",
     url: "https://crestabellawinery.com/about",
+    images: [
+      {
+        url: "/images/IMG_8538.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "Cresta Bella Vineyards on the Santa Rosa Plateau at sunset",
+      },
+    ],
   },
   alternates: {
     canonical: "https://crestabellawinery.com/about",
@@ -89,6 +97,30 @@ export default function AboutPage() {
             </ScrollReveal>
           </div>
         </div>
+      </section>
+
+      {/* Three Generations Section */}
+      <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-cream">
+        <ScrollReveal>
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="w-16 h-px bg-burgundy/30 mx-auto mb-8" />
+            <h2 className="font-serif text-3xl sm:text-4xl text-burgundy mb-8">
+              Three Generations
+            </h2>
+            <p className="text-charcoal/70 leading-relaxed text-lg">
+              Cresta Bella Vineyards is more than a winery. It is a family
+              project that has spanned three generations. From planting the
+              first vines to bottling the latest vintage, every member of the
+              Greiner family has played a role in building this place.
+              Grandparents, parents, and grandchildren have all had their hands
+              in the soil, helped during harvest, and shared in the bottles
+              that come from it. This is not a business venture. It is a
+              passion project, built together over time and meant to be enjoyed
+              the same way.
+            </p>
+            <div className="w-16 h-px bg-burgundy/30 mx-auto mt-8" />
+          </div>
+        </ScrollReveal>
       </section>
 
       {/* The Land Section */}
