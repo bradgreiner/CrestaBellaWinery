@@ -3,6 +3,37 @@ import VideoHero from "@/components/VideoHero";
 import ContactForm from "@/components/ContactForm";
 import GrapeInquiryForm from "@/components/GrapeInquiryForm";
 import ScrollReveal from "@/components/ScrollReveal";
+import JsonLd from "@/components/JsonLd";
+
+const contactPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  name: "Contact Cresta Bella Vineyards",
+  description:
+    "Contact Cresta Bella Vineyards in La Cresta, California. Reach out about tastings, wines, or purchasing estate-grown grapes.",
+  url: "https://www.crestabellawinery.com/contact",
+  mainEntity: {
+    "@type": "Winery",
+    "@id": "https://www.crestabellawinery.com/#winery",
+  },
+  breadcrumb: {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.crestabellawinery.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Contact",
+        item: "https://www.crestabellawinery.com/contact",
+      },
+    ],
+  },
+};
 
 export const metadata: Metadata = {
   title: "Contact Cresta Bella Vineyards | Grape Inquiries & Winery Contact",
@@ -30,6 +61,8 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
+      <JsonLd data={contactPageSchema} />
+
       {/* Hero Banner */}
       <VideoHero
         variant="page"

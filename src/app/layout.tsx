@@ -81,42 +81,6 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=DM+Sans:wght@300;400;500;700&display=swap"
           rel="stylesheet"
         />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Winery",
-              name: "Cresta Bella Vineyards",
-              description:
-                "Family-owned small batch winery on the Santa Rosa Plateau in La Cresta, California.",
-              url: "https://crestabellawinery.com",
-              telephone: "714-366-5366",
-              email: "dongreiner1957@gmail.com",
-              address: {
-                "@type": "PostalAddress",
-                addressLocality: "La Cresta",
-                addressRegion: "CA",
-                addressCountry: "US",
-              },
-              areaServed: {
-                "@type": "GeoCircle",
-                geoMidpoint: {
-                  "@type": "GeoCoordinates",
-                  latitude: 33.53,
-                  longitude: -117.38,
-                },
-                geoRadius: "50000",
-              },
-              priceRange: "$$",
-              openingHoursSpecification: {
-                "@type": "OpeningHoursSpecification",
-                description: "Tastings by appointment only",
-              },
-              sameAs: [],
-            }),
-          }}
-        />
       </head>
       <body className="font-sans antialiased bg-cream-light text-charcoal">
         <a href="#main-content" className="skip-to-content">

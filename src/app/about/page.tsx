@@ -2,6 +2,37 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import VideoHero from "@/components/VideoHero";
 import ScrollReveal from "@/components/ScrollReveal";
+import JsonLd from "@/components/JsonLd";
+
+const aboutPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  name: "About Cresta Bella Vineyards",
+  description:
+    "Meet the Greiner family behind Cresta Bella Vineyards. Three generations of hands-on winemaking on the Santa Rosa Plateau in La Cresta, California.",
+  url: "https://www.crestabellawinery.com/about",
+  mainEntity: {
+    "@type": "Winery",
+    "@id": "https://www.crestabellawinery.com/#winery",
+  },
+  breadcrumb: {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.crestabellawinery.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Our Vineyard",
+        item: "https://www.crestabellawinery.com/about",
+      },
+    ],
+  },
+};
 
 export const metadata: Metadata = {
   title: "About Cresta Bella Vineyards | Family Winery on the Santa Rosa Plateau",
@@ -29,6 +60,8 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
+      <JsonLd data={aboutPageSchema} />
+
       {/* Hero Banner */}
       <VideoHero
         variant="page"

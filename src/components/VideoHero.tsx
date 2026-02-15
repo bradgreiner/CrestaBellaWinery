@@ -134,7 +134,7 @@ export default function VideoHero({
         {subtitle && (
           <p
             className={`mt-4 sm:mt-6 font-serif italic text-cream/70 ${
-              isHome ? "text-lg sm:text-xl md:text-2xl" : "text-lg sm:text-xl"
+              isHome ? "text-xl sm:text-2xl md:text-3xl" : "text-lg sm:text-xl"
             }`}
           >
             {subtitle}
