@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Hero from "@/components/Hero";
+import VideoHero from "@/components/VideoHero";
 import FeatureCard from "@/components/FeatureCard";
 import ScrollReveal from "@/components/ScrollReveal";
 
@@ -7,11 +7,15 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <Hero
+      <VideoHero
         variant="home"
         title="Cresta Bella Vineyards"
         subtitle="Small Batch Wines from the Santa Rosa Plateau"
-        imagePlaceholder="Panoramic vineyard rows with Santa Rosa Plateau views, golden hour lighting"
+        videoMp4="/videos/IMG_8563.mp4"
+        videoMov="/videos/IMG_8563.MOV"
+        posterImage="/images/IMG_8538.jpeg"
+        ctaHref="/about"
+        ctaText="Discover Our Vineyard"
       />
 
       {/* Introduction Section */}
@@ -136,9 +140,15 @@ export default function Home() {
 
       {/* Visual Break / Quote Section */}
       <section className="relative py-32 sm:py-40 px-4 sm:px-6">
-        {/* TODO: Replace with real vineyard landscape photo when available */}
+        {/* Background: grape cluster close-up photo */}
+        <Image
+          src="/images/IMG_8081.jpeg"
+          alt="Estate-grown grapes ripening on the vine at Cresta Bella Vineyards, La Cresta California"
+          fill
+          className="object-cover"
+        />
         <div
-          className="absolute inset-0 bg-gradient-to-r from-olive-dark/80 via-olive/70 to-burgundy/60"
+          className="absolute inset-0 bg-black/60"
           aria-hidden="true"
         />
         <ScrollReveal>

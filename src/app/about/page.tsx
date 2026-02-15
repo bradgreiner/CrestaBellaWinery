@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Hero from "@/components/Hero";
+import VideoHero from "@/components/VideoHero";
 import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
@@ -22,11 +22,13 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero Banner */}
-      <Hero
+      <VideoHero
         variant="page"
         title="Our Vineyard"
         subtitle="A family estate on the Santa Rosa Plateau"
-        imagePlaceholder="Vineyard landscape with plateau views — swap for drone/landscape shot when available"
+        videoMp4="/videos/IMG_8540.mp4"
+        videoMov="/videos/IMG_8540.MOV"
+        posterImage="/images/IMG_8538.jpeg"
       />
 
       {/* Story Section — with Don & Linda photo */}
@@ -224,9 +226,14 @@ export default function AboutPage() {
 
       {/* Visual Break */}
       <section className="relative py-24 sm:py-32 px-4 sm:px-6">
-        {/* TODO: Replace with vineyard landscape photo when available */}
+        <Image
+          src="/images/IMG_8081.jpeg"
+          alt="Estate-grown grapes ripening on the vine at Cresta Bella Vineyards"
+          fill
+          className="object-cover"
+        />
         <div
-          className="absolute inset-0 bg-gradient-to-r from-burgundy-deep/80 via-burgundy/70 to-olive-dark/60"
+          className="absolute inset-0 bg-black/60"
           aria-hidden="true"
         />
         <ScrollReveal>
