@@ -1,13 +1,8 @@
 "use client";
 
-import { useRef, Suspense } from "react";
+import { useRef } from "react";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
-import dynamic from "next/dynamic";
-
-const BottleLoader = dynamic(() => import("@/components/3d/BottleLoader"), {
-  ssr: false,
-});
 
 const wines = [
   {
@@ -49,45 +44,22 @@ export default function CurrentReleases() {
           <div className="w-16 h-px bg-gold/40 mx-auto mt-6" />
         </motion.div>
 
-        {/* 3D Bottle Scene */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 1, delay: 0.3 }}
-          className="mb-24"
-        >
-          <Suspense
-            fallback={
-              <div className="h-[500px] sm:h-[580px] flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-8 h-8 border border-gold/30 border-t-gold/80 rounded-full animate-spin mx-auto mb-4" />
-                  <p className="text-xs tracking-[0.2em] uppercase text-muted">
-                    Loading
-                  </p>
-                </div>
-              </div>
-            }
-          >
-            <BottleLoader />
-          </Suspense>
-        </motion.div>
-
-        {/* Wine Cards */}
+        {/* Wine Cards — photos side by side */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-16 sm:gap-20 max-w-4xl mx-auto">
           {wines.map((wine, i) => (
             <motion.div
               key={wine.name}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.5 + i * 0.2 }}
+              transition={{ duration: 0.8, delay: 0.3 + i * 0.2 }}
               className="text-center"
             >
-              <div className="relative mb-8 p-4">
+              <div className="relative mb-8">
                 <Image
                   src={wine.image}
                   alt={wine.alt}
-                  width={280}
-                  height={420}
+                  width={320}
+                  height={480}
                   className="mx-auto h-auto drop-shadow-2xl"
                 />
               </div>
@@ -108,7 +80,7 @@ export default function CurrentReleases() {
         <motion.p
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.8, delay: 1 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
           className="text-center text-muted text-xs tracking-wide mt-16 max-w-md mx-auto"
         >
           Estate-grown reds, handcrafted in small lots on the Santa Rosa
