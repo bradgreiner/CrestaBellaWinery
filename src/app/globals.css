@@ -22,6 +22,7 @@ body {
   background: var(--color-primary);
   font-size: 1.0625rem;
   line-height: 1.7;
+  letter-spacing: 0.01em;
 }
 
 /* Skip to content link for accessibility */

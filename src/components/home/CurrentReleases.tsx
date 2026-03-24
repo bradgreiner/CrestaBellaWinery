@@ -49,7 +49,7 @@ export default function CurrentReleases() {
           <div className="w-16 h-px bg-gold/40 mx-auto mt-6" />
         </motion.div>
 
-        {/* 3D Cellar Scene */}
+        {/* 3D Bottle Scene */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
@@ -58,11 +58,11 @@ export default function CurrentReleases() {
         >
           <Suspense
             fallback={
-              <div className="h-[450px] sm:h-[550px] flex items-center justify-center">
+              <div className="h-[500px] sm:h-[580px] flex items-center justify-center">
                 <div className="text-center">
                   <div className="w-8 h-8 border border-gold/30 border-t-gold/80 rounded-full animate-spin mx-auto mb-4" />
                   <p className="text-xs tracking-[0.2em] uppercase text-muted">
-                    Loading cellar
+                    Loading
                   </p>
                 </div>
               </div>

@@ -1,120 +1,159 @@
 "use client";
 
-import { useMemo } from "react";
+import { useMemo, useRef } from "react";
+import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
-// Bordeaux bottle profile using lathe geometry for realistic shape
+// Highly detailed Bordeaux bottle profile — 35+ control points
 function createBottleGeometry() {
-  const points: THREE.Vector2[] = [];
+  const pts: THREE.Vector2[] = [];
 
-  // Punt (bottom indent)
-  points.push(new THREE.Vector2(0, 0));
-  points.push(new THREE.Vector2(0.08, 0.02));
-  points.push(new THREE.Vector2(0.15, 0.05));
+  // === PUNT (concave bottom) ===
+  pts.push(new THREE.Vector2(0, 0));
+  pts.push(new THREE.Vector2(0.04, 0.005));
+  pts.push(new THREE.Vector2(0.08, 0.015));
+  pts.push(new THREE.Vector2(0.12, 0.03));
+  pts.push(new THREE.Vector2(0.18, 0.04));
+  pts.push(new THREE.Vector2(0.25, 0.035));
+  pts.push(new THREE.Vector2(0.30, 0.02));
 
-  // Base
-  points.push(new THREE.Vector2(0.36, 0.08));
-  points.push(new THREE.Vector2(0.37, 0.12));
+  // === BASE HEEL ===
+  pts.push(new THREE.Vector2(0.355, 0.02));
+  pts.push(new THREE.Vector2(0.365, 0.04));
+  pts.push(new THREE.Vector2(0.37, 0.07));
+  pts.push(new THREE.Vector2(0.372, 0.10));
 
-  // Body (straight sides, Bordeaux style)
-  points.push(new THREE.Vector2(0.37, 0.5));
-  points.push(new THREE.Vector2(0.37, 1.5));
-  points.push(new THREE.Vector2(0.37, 2.2));
+  // === BODY (long straight sides, Bordeaux hallmark) ===
+  pts.push(new THREE.Vector2(0.372, 0.25));
+  pts.push(new THREE.Vector2(0.372, 0.50));
+  pts.push(new THREE.Vector2(0.372, 0.75));
+  pts.push(new THREE.Vector2(0.372, 1.00));
+  pts.push(new THREE.Vector2(0.372, 1.25));
+  pts.push(new THREE.Vector2(0.372, 1.50));
+  pts.push(new THREE.Vector2(0.372, 1.75));
+  pts.push(new THREE.Vector2(0.372, 2.00));
+  pts.push(new THREE.Vector2(0.372, 2.20));
 
-  // Shoulder (high and sharp for Bordeaux)
-  points.push(new THREE.Vector2(0.36, 2.4));
-  points.push(new THREE.Vector2(0.34, 2.55));
-  points.push(new THREE.Vector2(0.30, 2.65));
-  points.push(new THREE.Vector2(0.22, 2.75));
-  points.push(new THREE.Vector2(0.16, 2.82));
+  // === SHOULDER (high, pronounced — defines Bordeaux shape) ===
+  pts.push(new THREE.Vector2(0.371, 2.30));
+  pts.push(new THREE.Vector2(0.368, 2.38));
+  pts.push(new THREE.Vector2(0.362, 2.45));
+  pts.push(new THREE.Vector2(0.350, 2.52));
+  pts.push(new THREE.Vector2(0.330, 2.58));
+  pts.push(new THREE.Vector2(0.300, 2.64));
+  pts.push(new THREE.Vector2(0.260, 2.70));
+  pts.push(new THREE.Vector2(0.220, 2.75));
+  pts.push(new THREE.Vector2(0.185, 2.79));
+  pts.push(new THREE.Vector2(0.160, 2.82));
 
-  // Neck
-  points.push(new THREE.Vector2(0.14, 2.9));
-  points.push(new THREE.Vector2(0.135, 3.2));
-  points.push(new THREE.Vector2(0.13, 3.5));
+  // === NECK (long taper) ===
+  pts.push(new THREE.Vector2(0.148, 2.86));
+  pts.push(new THREE.Vector2(0.140, 2.92));
+  pts.push(new THREE.Vector2(0.136, 3.00));
+  pts.push(new THREE.Vector2(0.133, 3.10));
+  pts.push(new THREE.Vector2(0.131, 3.20));
+  pts.push(new THREE.Vector2(0.130, 3.30));
+  pts.push(new THREE.Vector2(0.129, 3.40));
+  pts.push(new THREE.Vector2(0.129, 3.48));
 
-  // Lip ring
-  points.push(new THREE.Vector2(0.14, 3.55));
-  points.push(new THREE.Vector2(0.15, 3.58));
-  points.push(new THREE.Vector2(0.15, 3.62));
-  points.push(new THREE.Vector2(0.13, 3.64));
+  // === LIP / COLLAR ===
+  pts.push(new THREE.Vector2(0.132, 3.52));
+  pts.push(new THREE.Vector2(0.140, 3.55));
+  pts.push(new THREE.Vector2(0.148, 3.57));
+  pts.push(new THREE.Vector2(0.150, 3.59));
+  pts.push(new THREE.Vector2(0.150, 3.62));
+  pts.push(new THREE.Vector2(0.145, 3.64));
+  pts.push(new THREE.Vector2(0.135, 3.65));
 
-  // Top
-  points.push(new THREE.Vector2(0.12, 3.65));
-  points.push(new THREE.Vector2(0, 3.65));
+  // === TOP ===
+  pts.push(new THREE.Vector2(0.125, 3.66));
+  pts.push(new THREE.Vector2(0.06, 3.66));
+  pts.push(new THREE.Vector2(0, 3.66));
 
-  return new THREE.LatheGeometry(points, 48);
+  return new THREE.LatheGeometry(pts, 64);
 }
 
+// Label area geometry — wraps around bottle body
 function createLabelGeometry() {
-  // Label wraps around the body
-  const points: THREE.Vector2[] = [];
-  points.push(new THREE.Vector2(0.375, 0.7));
-  points.push(new THREE.Vector2(0.375, 1.9));
-  return new THREE.LatheGeometry(points, 48);
+  const pts: THREE.Vector2[] = [];
+  pts.push(new THREE.Vector2(0.377, 0.65));
+  pts.push(new THREE.Vector2(0.377, 0.80));
+  pts.push(new THREE.Vector2(0.377, 1.00));
+  pts.push(new THREE.Vector2(0.377, 1.20));
+  pts.push(new THREE.Vector2(0.377, 1.40));
+  pts.push(new THREE.Vector2(0.377, 1.60));
+  pts.push(new THREE.Vector2(0.377, 1.80));
+  pts.push(new THREE.Vector2(0.377, 1.95));
+  return new THREE.LatheGeometry(pts, 64);
+}
+
+// Wine fill inside the bottle
+function createWineGeometry() {
+  const pts: THREE.Vector2[] = [];
+  pts.push(new THREE.Vector2(0, 0.12));
+  pts.push(new THREE.Vector2(0.34, 0.12));
+  pts.push(new THREE.Vector2(0.34, 2.10));
+  pts.push(new THREE.Vector2(0, 2.10));
+  return new THREE.LatheGeometry(pts, 32);
 }
 
 export default function WineBottle() {
+  const groupRef = useRef<THREE.Group>(null);
   const bottleGeo = useMemo(() => createBottleGeometry(), []);
   const labelGeo = useMemo(() => createLabelGeometry(), []);
+  const wineGeo = useMemo(() => createWineGeometry(), []);
 
-  // Dark red-brown glass, nearly opaque like a real Cab Sauv bottle
-  const glassColor = useMemo(() => new THREE.Color("#1a0a0a"), []);
-  // Cream label
-  const labelColor = useMemo(() => new THREE.Color("#E8DFD0"), []);
+  // Slow auto-rotation
+  useFrame((_, delta) => {
+    if (groupRef.current) {
+      groupRef.current.rotation.y += delta * 0.15;
+    }
+  });
 
   return (
-    <group position={[0, -1.8, 0]}>
-      {/* Main bottle glass */}
-      <mesh geometry={bottleGeo}>
+    <group ref={groupRef} position={[0, -1.83, 0]}>
+      {/* === GLASS BODY === */}
+      <mesh geometry={bottleGeo} castShadow receiveShadow>
         <meshPhysicalMaterial
-          color={glassColor}
-          metalness={0.05}
-          roughness={0.12}
-          transmission={0.15}
-          thickness={2}
+          color="#1A0505"
+          metalness={0.1}
+          roughness={0.15}
+          transmission={0.12}
+          thickness={2.5}
           clearcoat={1}
-          clearcoatRoughness={0.05}
-          envMapIntensity={2}
-          ior={1.5}
+          clearcoatRoughness={0.03}
+          envMapIntensity={1.8}
+          ior={1.52}
+          specularIntensity={1}
+          specularColor="#ffffff"
         />
       </mesh>
 
-      {/* Wine inside */}
-      <mesh position={[0, 0, 0]}>
-        <cylinderGeometry args={[0.34, 0.34, 2.0, 32]} />
+      {/* === WINE INSIDE === */}
+      <mesh geometry={wineGeo}>
         <meshPhysicalMaterial
-          color="#3a0510"
+          color="#2a0308"
           metalness={0}
-          roughness={0.4}
-          transmission={0.2}
-          thickness={3}
+          roughness={0.5}
+          transmission={0.08}
+          thickness={4}
         />
       </mesh>
 
-      {/* Label background - cream paper */}
-      <mesh geometry={labelGeo}>
+      {/* === LABEL (cream paper) === */}
+      <mesh geometry={labelGeo} castShadow>
         <meshStandardMaterial
-          color={labelColor}
+          color="#F5F0E8"
           side={THREE.DoubleSide}
           metalness={0}
-          roughness={0.8}
+          roughness={0.75}
         />
       </mesh>
 
-      {/* Gold border - top of label */}
-      <mesh>
-        <cylinderGeometry args={[0.38, 0.38, 0.015, 48, 1, true]} />
-        <meshStandardMaterial
-          color="#C5A572"
-          side={THREE.DoubleSide}
-          metalness={0.7}
-          roughness={0.25}
-        />
-      </mesh>
-      <group position={[0, 1.9, 0]}>
+      {/* === GOLD BORDER — top of label === */}
+      <group position={[0, 1.95, 0]}>
         <mesh>
-          <cylinderGeometry args={[0.38, 0.38, 0.015, 48, 1, true]} />
+          <cylinderGeometry args={[0.381, 0.381, 0.02, 64, 1, true]} />
           <meshStandardMaterial
             color="#C5A572"
             side={THREE.DoubleSide}
@@ -124,10 +163,10 @@ export default function WineBottle() {
         </mesh>
       </group>
 
-      {/* Gold border - bottom of label */}
-      <group position={[0, 0.7, 0]}>
+      {/* === GOLD BORDER — bottom of label === */}
+      <group position={[0, 0.65, 0]}>
         <mesh>
-          <cylinderGeometry args={[0.38, 0.38, 0.015, 48, 1, true]} />
+          <cylinderGeometry args={[0.381, 0.381, 0.02, 64, 1, true]} />
           <meshStandardMaterial
             color="#C5A572"
             side={THREE.DoubleSide}
@@ -137,10 +176,10 @@ export default function WineBottle() {
         </mesh>
       </group>
 
-      {/* Gold center line on label */}
-      <group position={[0, 1.3, 0]}>
+      {/* === GOLD ACCENT LINE — center of label === */}
+      <group position={[0, 1.30, 0]}>
         <mesh>
-          <cylinderGeometry args={[0.378, 0.378, 0.005, 48, 1, true]} />
+          <cylinderGeometry args={[0.379, 0.379, 0.008, 64, 1, true]} />
           <meshStandardMaterial
             color="#C5A572"
             side={THREE.DoubleSide}
@@ -150,22 +189,32 @@ export default function WineBottle() {
         </mesh>
       </group>
 
-      {/* Foil capsule over neck/cork */}
-      <mesh position={[0, 3.45, 0]}>
-        <cylinderGeometry args={[0.155, 0.155, 0.45, 32]} />
+      {/* === FOIL CAPSULE (dark burgundy, metallic) === */}
+      <mesh position={[0, 3.42, 0]} castShadow>
+        <cylinderGeometry args={[0.153, 0.153, 0.52, 48]} />
         <meshStandardMaterial
-          color="#1a0808"
-          metalness={0.85}
-          roughness={0.2}
+          color="#1a0505"
+          metalness={0.4}
+          roughness={0.3}
         />
       </mesh>
 
-      {/* Foil top cap */}
-      <mesh position={[0, 3.67, 0]} rotation={[Math.PI / 2, 0, 0]}>
-        <circleGeometry args={[0.155, 32]} />
+      {/* Foil top */}
+      <mesh position={[0, 3.68, 0]} rotation={[Math.PI / 2, 0, 0]}>
+        <circleGeometry args={[0.153, 48]} />
         <meshStandardMaterial
-          color="#1a0808"
-          metalness={0.85}
+          color="#1a0505"
+          metalness={0.4}
+          roughness={0.3}
+        />
+      </mesh>
+
+      {/* === FOIL RING at capsule base === */}
+      <mesh position={[0, 3.16, 0]}>
+        <torusGeometry args={[0.155, 0.005, 8, 48]} />
+        <meshStandardMaterial
+          color="#C5A572"
+          metalness={0.8}
           roughness={0.2}
         />
       </mesh>
