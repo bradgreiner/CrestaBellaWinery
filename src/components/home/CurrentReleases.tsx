@@ -1,0 +1,120 @@
+"use client";
+
+import { useRef, Suspense } from "react";
+import Image from "next/image";
+import { motion, useInView } from "framer-motion";
+import dynamic from "next/dynamic";
+
+const BottleLoader = dynamic(() => import("@/components/3d/BottleLoader"), {
+  ssr: false,
+});
+
+const wines = [
+  {
+    name: "Cabernet Franc",
+    year: "2023",
+    image: "/images/cabernet-franc-2023.png",
+    alt: "Cresta Bella Vineyards 2023 Cabernet Franc, small batch wine from La Cresta California",
+    note: "Bright and aromatic with notes of red pepper, violet, and dark cherry. Medium-bodied with a long, smooth finish.",
+  },
+  {
+    name: "Cabernet Sauvignon",
+    year: "2023",
+    image: "/images/cabernet-sauvignon-2023.png",
+    alt: "Cresta Bella Vineyards 2023 Cabernet Sauvignon, estate-grown small batch wine",
+    note: "Rich and structured with blackcurrant, cedar, and a hint of dried herb. Full-bodied with firm tannins and depth.",
+  },
+];
+
+export default function CurrentReleases() {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  return (
+    <section className="py-28 sm:py-36 px-4 sm:px-6 lg:px-8 bg-secondary">
+      <div ref={ref} className="max-w-6xl mx-auto">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-20"
+        >
+          <p className="text-[10px] tracking-[0.4em] uppercase text-gold/60 font-sans mb-4">
+            Estate Grown &middot; Small Batch
+          </p>
+          <h2 className="font-serif text-4xl sm:text-5xl text-offwhite font-light">
+            Current Releases
+          </h2>
+          <div className="w-16 h-px bg-gold/30 mx-auto mt-6" />
+        </motion.div>
+
+        {/* 3D Bottle */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ duration: 1, delay: 0.3 }}
+          className="mb-24"
+        >
+          <Suspense
+            fallback={
+              <div className="h-[400px] sm:h-[500px] flex items-center justify-center">
+                <div className="text-center">
+                  <div className="w-8 h-8 border border-gold/30 border-t-gold/80 rounded-full animate-spin mx-auto mb-4" />
+                  <p className="text-xs tracking-[0.2em] uppercase text-muted/40">
+                    Loading
+                  </p>
+                </div>
+              </div>
+            }
+          >
+            <BottleLoader />
+          </Suspense>
+        </motion.div>
+
+        {/* Wine Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-16 sm:gap-20 max-w-4xl mx-auto">
+          {wines.map((wine, i) => (
+            <motion.div
+              key={wine.name}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.5 + i * 0.2 }}
+              className="text-center"
+            >
+              <div className="relative mb-8 p-4">
+                <Image
+                  src={wine.image}
+                  alt={wine.alt}
+                  width={280}
+                  height={420}
+                  className="mx-auto h-auto drop-shadow-2xl"
+                />
+              </div>
+              <h3 className="font-serif text-2xl text-offwhite font-light">
+                {wine.name}
+              </h3>
+              <p className="text-xs tracking-[0.2em] uppercase text-gold/60 mt-2 font-sans">
+                {wine.year} Vintage
+              </p>
+              <p className="text-sm text-muted mt-4 leading-relaxed italic font-serif">
+                {wine.note}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Bottom note */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.8, delay: 1 }}
+          className="text-center text-muted/50 text-xs tracking-wide mt-16 max-w-md mx-auto"
+        >
+          Estate-grown reds, handcrafted in small lots on the Santa Rosa
+          Plateau. Each bottle reflects the character of our unique terroir.
+        </motion.p>
+      </div>
+    </section>
+  );
+}
