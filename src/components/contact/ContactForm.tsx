@@ -17,9 +17,7 @@ export default function ContactForm() {
       const response = await fetch("https://formspree.io/f/mykdwppq", {
         method: "POST",
         body: formData,
-        headers: {
-          Accept: "application/json",
-        },
+        headers: { Accept: "application/json" },
       });
 
       if (response.ok) {
@@ -27,7 +25,6 @@ export default function ContactForm() {
         form.reset();
       }
     } catch {
-      // Fallback: open mailto
       const name = formData.get("name") as string;
       const email = formData.get("email") as string;
       const message = formData.get("message") as string;
@@ -41,25 +38,27 @@ export default function ContactForm() {
 
   if (isSubmitted) {
     return (
-      <div className="text-center py-8">
-        <svg
-          className="w-12 h-12 text-olive mx-auto mb-4"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={1.5}
-            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-          />
-        </svg>
-        <h3 className="font-serif text-xl text-burgundy mb-2">
+      <div className="text-center py-12">
+        <div className="w-12 h-12 border border-gold/30 rounded-full flex items-center justify-center mx-auto mb-6">
+          <svg
+            className="w-6 h-6 text-gold"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={1.5}
+              d="M5 13l4 4L19 7"
+            />
+          </svg>
+        </div>
+        <h3 className="font-serif text-xl text-offwhite mb-2">
           Message Sent
         </h3>
-        <p className="text-charcoal/60 text-sm">
+        <p className="text-muted text-sm">
           Thank you for reaching out. We will be in touch soon.
         </p>
       </div>
@@ -67,13 +66,13 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
+    <form onSubmit={handleSubmit} className="space-y-6">
       <div>
         <label
           htmlFor="contact-name"
-          className="block text-sm font-medium text-charcoal/80 mb-1"
+          className="block text-xs tracking-[0.15em] uppercase text-muted mb-2 font-sans"
         >
-          Name <span className="text-burgundy" aria-hidden="true">*</span>
+          Name <span className="text-wine" aria-hidden="true">*</span>
           <span className="sr-only">(required)</span>
         </label>
         <input
@@ -82,7 +81,7 @@ export default function ContactForm() {
           name="name"
           required
           autoComplete="name"
-          className="w-full px-4 py-3 bg-cream-light border border-cream-dark rounded-sm text-charcoal placeholder:text-charcoal/30 focus:outline-none focus:ring-2 focus:ring-burgundy/30 focus:border-burgundy/50 transition-colors"
+          className="w-full px-4 py-3 bg-primary border border-offwhite/10 text-offwhite placeholder:text-muted/30 focus:outline-none focus:border-gold/40 transition-colors duration-300"
           placeholder="Your name"
         />
       </div>
@@ -90,9 +89,9 @@ export default function ContactForm() {
       <div>
         <label
           htmlFor="contact-email"
-          className="block text-sm font-medium text-charcoal/80 mb-1"
+          className="block text-xs tracking-[0.15em] uppercase text-muted mb-2 font-sans"
         >
-          Email <span className="text-burgundy" aria-hidden="true">*</span>
+          Email <span className="text-wine" aria-hidden="true">*</span>
           <span className="sr-only">(required)</span>
         </label>
         <input
@@ -101,7 +100,7 @@ export default function ContactForm() {
           name="email"
           required
           autoComplete="email"
-          className="w-full px-4 py-3 bg-cream-light border border-cream-dark rounded-sm text-charcoal placeholder:text-charcoal/30 focus:outline-none focus:ring-2 focus:ring-burgundy/30 focus:border-burgundy/50 transition-colors"
+          className="w-full px-4 py-3 bg-primary border border-offwhite/10 text-offwhite placeholder:text-muted/30 focus:outline-none focus:border-gold/40 transition-colors duration-300"
           placeholder="your@email.com"
         />
       </div>
@@ -109,9 +108,9 @@ export default function ContactForm() {
       <div>
         <label
           htmlFor="contact-message"
-          className="block text-sm font-medium text-charcoal/80 mb-1"
+          className="block text-xs tracking-[0.15em] uppercase text-muted mb-2 font-sans"
         >
-          Message <span className="text-burgundy" aria-hidden="true">*</span>
+          Message <span className="text-wine" aria-hidden="true">*</span>
           <span className="sr-only">(required)</span>
         </label>
         <textarea
@@ -119,7 +118,7 @@ export default function ContactForm() {
           name="message"
           required
           rows={5}
-          className="w-full px-4 py-3 bg-cream-light border border-cream-dark rounded-sm text-charcoal placeholder:text-charcoal/30 focus:outline-none focus:ring-2 focus:ring-burgundy/30 focus:border-burgundy/50 transition-colors resize-vertical"
+          className="w-full px-4 py-3 bg-primary border border-offwhite/10 text-offwhite placeholder:text-muted/30 focus:outline-none focus:border-gold/40 transition-colors duration-300 resize-vertical"
           placeholder="How can we help?"
         />
       </div>
@@ -127,7 +126,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full py-3 px-6 bg-burgundy text-cream-light text-sm tracking-widest uppercase hover:bg-burgundy-deep focus:outline-none focus:ring-2 focus:ring-burgundy/50 focus:ring-offset-2 focus:ring-offset-cream-light disabled:opacity-50 transition-colors duration-200"
+        className="w-full py-4 px-6 border border-gold/30 text-gold text-xs tracking-[0.25em] uppercase hover:bg-gold/10 hover:border-gold/50 focus:outline-none focus:border-gold/50 disabled:opacity-50 transition-all duration-500"
       >
         {isSubmitting ? "Sending..." : "Send Message"}
       </button>

@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import VideoHero from "@/components/VideoHero";
-import ContactForm from "@/components/ContactForm";
-import GrapeInquiryForm from "@/components/GrapeInquiryForm";
-import ScrollReveal from "@/components/ScrollReveal";
 import JsonLd from "@/components/JsonLd";
+import ContactForm from "@/components/contact/ContactForm";
+import GrapeInquiryForm from "@/components/contact/GrapeInquiryForm";
+import DirectContact from "@/components/contact/DirectContact";
+import ContactHero from "./ContactHero";
+import FindUs from "./FindUs";
 
 const contactPageSchema = {
   "@context": "https://schema.org",
@@ -36,11 +37,11 @@ const contactPageSchema = {
 };
 
 export const metadata: Metadata = {
-  title: "Contact Cresta Bella Vineyards | Grape Inquiries & Winery Contact",
+  title: "Contact | Grape Inquiries & Winery Visit",
   description:
     "Contact Cresta Bella Vineyards in La Cresta, California. Reach out about tastings, wines, or purchasing estate-grown grapes. Small batch winery near Temecula Valley.",
   openGraph: {
-    title: "Contact Cresta Bella Vineyards | Grape Inquiries & Winery Contact",
+    title: "Contact Cresta Bella Vineyards",
     description:
       "Contact Cresta Bella Vineyards in La Cresta, California. Reach out about tastings, wines, or purchasing estate-grown grapes.",
     url: "https://crestabellawinery.com/contact",
@@ -62,134 +63,44 @@ export default function ContactPage() {
   return (
     <>
       <JsonLd data={contactPageSchema} />
-
-      {/* Hero Banner */}
-      <VideoHero
-        variant="page"
-        title="Get in Touch"
-        subtitle="We would love to hear from you"
-        videoMp4="/videos/IMG_8563.mp4"
-        videoMov="/images/IMG_8563.MOV"
-        posterImage="/images/IMG_8538.jpeg"
-      />
+      <ContactHero />
 
       {/* Two Column Forms */}
-      <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-cream-light">
+      <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-secondary">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-            {/* Left Column: General Contact */}
-            <ScrollReveal className="h-full">
-              <div className="flex flex-col h-full">
-                <h2 className="font-serif text-2xl sm:text-3xl text-burgundy mb-3">
-                  Contact Us
-                </h2>
-                <p className="text-charcoal/60 leading-relaxed mb-8">
-                  Whether you have questions about our wines, want to plan a
-                  visit to the vineyard, or simply want to say hello — we would
-                  love to hear from you and will respond as soon as we can.
-                </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20">
+            {/* General Contact */}
+            <div>
+              <h2 className="font-serif text-3xl text-offwhite font-light mb-3">
+                Contact Us
+              </h2>
+              <p className="text-muted leading-relaxed mb-8">
+                Whether you have questions about our wines, want to plan a
+                visit to the vineyard, or simply want to say hello — we would
+                love to hear from you and will respond as soon as we can.
+              </p>
+              <ContactForm />
+            </div>
 
-                <div className="bg-cream p-6 sm:p-8 rounded-sm flex-1">
-                  <ContactForm />
-                </div>
-              </div>
-            </ScrollReveal>
-
-            {/* Right Column: Grape Purchase Inquiries */}
-            <ScrollReveal className="h-full">
-              <div className="flex flex-col h-full">
-                <h2 className="font-serif text-2xl sm:text-3xl text-burgundy mb-3">
-                  Grape Purchase Inquiries
-                </h2>
-                <p className="text-charcoal/60 leading-relaxed mb-8">
-                  Each year, we offer a limited quantity of estate-grown grapes
-                  to home winemakers and fellow producers. Submit your interest
-                  below and we will be in touch.
-                </p>
-
-                <div className="bg-cream p-6 sm:p-8 rounded-sm flex-1">
-                  <GrapeInquiryForm />
-                </div>
-              </div>
-            </ScrollReveal>
+            {/* Grape Purchase Inquiries */}
+            <div>
+              <h2 className="font-serif text-3xl text-offwhite font-light mb-3">
+                Grape Purchase Inquiries
+              </h2>
+              <p className="text-muted leading-relaxed mb-8">
+                Each year, we offer a limited quantity of estate-grown grapes
+                to home winemakers and fellow producers. Submit your interest
+                below and we will be in touch.
+              </p>
+              <GrapeInquiryForm />
+            </div>
           </div>
 
-          {/* Direct Contact Info */}
-          <ScrollReveal>
-            <div className="mt-12 pt-8 border-t border-cream-dark/50 text-center">
-              <p className="text-sm text-charcoal/50 mb-3">
-                Or reach us directly:
-              </p>
-              <div className="space-y-2">
-                <p className="text-sm font-medium text-charcoal/80">
-                  Don Greiner, Proprietor
-                </p>
-                <p className="text-sm">
-                  <a
-                    href="tel:714-366-5366"
-                    className="text-burgundy hover:text-burgundy-deep transition-colors"
-                  >
-                    (714) 366-5366
-                  </a>
-                </p>
-                <p className="text-sm">
-                  <a
-                    href="mailto:dongreiner1957@gmail.com"
-                    className="text-burgundy hover:text-burgundy-deep transition-colors"
-                  >
-                    dongreiner1957@gmail.com
-                  </a>
-                </p>
-                <p className="text-sm text-charcoal/50">
-                  La Cresta, California
-                </p>
-              </div>
-            </div>
-          </ScrollReveal>
+          <DirectContact />
         </div>
       </section>
 
-      {/* Location Section */}
-      <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-cream">
-        <div className="max-w-4xl mx-auto text-center">
-          <ScrollReveal>
-            <h2 className="font-serif text-3xl sm:text-4xl text-burgundy mb-6">
-              Find Us
-            </h2>
-
-            <div className="space-y-4 text-charcoal/70">
-              <p className="text-lg">
-                <span className="font-serif text-charcoal/80">
-                  La Cresta, California
-                </span>
-                <br />
-                <span className="text-sm text-charcoal/50">
-                  Santa Rosa Plateau &middot; Riverside County
-                </span>
-              </p>
-
-              <p className="text-sm text-charcoal/50 max-w-md mx-auto">
-                Located near Murrieta and Temecula, on the Santa Rosa Plateau.
-                Our vineyard sits at the heart of one of Southern
-                California&apos;s most beautiful natural landscapes, just
-                minutes from Temecula Valley wine country.
-              </p>
-
-              <div className="pt-4">
-                <p className="inline-block px-6 py-3 bg-cream-dark/50 rounded-sm text-sm text-charcoal/60">
-                  <span className="font-medium text-burgundy">
-                    Tastings by appointment only
-                  </span>
-                  <br />
-                  <span className="text-xs">
-                    Contact us to schedule your visit
-                  </span>
-                </p>
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+      <FindUs />
     </>
   );
 }
