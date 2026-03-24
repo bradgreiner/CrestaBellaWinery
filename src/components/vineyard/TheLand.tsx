@@ -15,7 +15,7 @@ export default function TheLand() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-secondary">
+    <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-surface">
       <div ref={ref} className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -26,14 +26,14 @@ export default function TheLand() {
           <h2 className="font-serif text-4xl sm:text-5xl text-offwhite font-light mb-4">
             The Land
           </h2>
-          <div className="w-16 h-px bg-gold/30 mx-auto" />
+          <div className="w-16 h-px bg-gold/40 mx-auto" />
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="max-w-3xl mx-auto space-y-6 text-muted leading-relaxed"
+          className="max-w-3xl mx-auto space-y-6 text-body leading-[1.7]"
         >
           <p>
             La Cresta sits on the Santa Rosa Plateau, one of Southern
@@ -72,10 +72,10 @@ export default function TheLand() {
               <p className="font-serif text-3xl sm:text-4xl text-gold font-light">
                 {item.stat}
               </p>
-              <p className="text-[10px] tracking-[0.25em] uppercase text-gold/50 mt-2 font-sans">
+              <p className="text-[10px] tracking-[0.25em] uppercase text-gold/60 mt-2 font-sans">
                 {item.unit}
               </p>
-              <p className="text-xs text-muted/50 mt-2">{item.label}</p>
+              <p className="text-xs text-muted mt-2">{item.label}</p>
             </motion.div>
           ))}
         </div>

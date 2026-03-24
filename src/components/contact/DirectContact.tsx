@@ -15,17 +15,17 @@ export default function DirectContact() {
       transition={{ duration: 0.8 }}
       className="mt-16 pt-12 border-t border-gold/10 text-center"
     >
-      <p className="text-xs tracking-[0.2em] uppercase text-muted/40 mb-6 font-sans">
+      <p className="text-xs tracking-[0.2em] uppercase text-muted mb-6 font-sans">
         Or reach us directly
       </p>
       <div className="space-y-3">
-        <p className="text-sm text-offwhite/80 font-medium">
+        <p className="text-sm text-offwhite font-medium">
           Don Greiner, Proprietor
         </p>
         <p className="text-sm">
           <a
             href="tel:714-366-5366"
-            className="text-gold/70 hover:text-gold transition-colors duration-300"
+            className="text-gold/80 hover:text-gold transition-colors duration-300"
           >
             (714) 366-5366
           </a>
@@ -33,12 +33,12 @@ export default function DirectContact() {
         <p className="text-sm">
           <a
             href="mailto:dongreiner1957@gmail.com"
-            className="text-gold/70 hover:text-gold transition-colors duration-300"
+            className="text-gold/80 hover:text-gold transition-colors duration-300"
           >
             dongreiner1957@gmail.com
           </a>
         </p>
-        <p className="text-sm text-muted/50">La Cresta, California</p>
+        <p className="text-sm text-muted">La Cresta, California</p>
       </div>
     </motion.div>
   );

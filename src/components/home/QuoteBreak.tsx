@@ -24,7 +24,7 @@ export default function QuoteBreak() {
           fill
           className="object-cover scale-110"
         />
-        <div className="absolute inset-0 bg-primary/70" />
+        <div className="absolute inset-0 bg-primary/65" />
       </motion.div>
 
       <div ref={textRef} className="relative z-10 max-w-4xl mx-auto text-center">
@@ -42,14 +42,14 @@ export default function QuoteBreak() {
           initial={{ scaleX: 0 }}
           animate={isInView ? { scaleX: 1 } : {}}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="w-12 h-px bg-gold/30 mx-auto mt-10 origin-center"
+          className="w-12 h-px bg-gold/40 mx-auto mt-10 origin-center"
         />
 
         <motion.p
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-6 text-xs tracking-[0.3em] uppercase font-sans text-muted/50"
+          className="mt-6 text-xs tracking-[0.3em] uppercase font-sans text-offwhite/60"
         >
           La Cresta, California &middot; Santa Rosa Plateau
         </motion.p>

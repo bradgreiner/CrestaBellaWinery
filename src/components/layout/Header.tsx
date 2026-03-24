@@ -45,7 +45,7 @@ export default function Header() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
-            ? "bg-primary/95 backdrop-blur-md border-b border-gold/10"
+            ? "bg-secondary/95 backdrop-blur-md border-b border-gold/10"
             : "bg-transparent"
         }`}
       >
@@ -80,7 +80,7 @@ export default function Header() {
                   className={`text-xs tracking-[0.25em] uppercase font-sans transition-colors duration-300 ${
                     pathname === link.href
                       ? "text-gold"
-                      : "text-offwhite/60 hover:text-offwhite"
+                      : "text-offwhite/70 hover:text-offwhite"
                   }`}
                 >
                   {link.label}
@@ -131,7 +131,7 @@ export default function Header() {
             className="fixed inset-0 z-40 md:hidden"
             role="menu"
           >
-            <div className="absolute inset-0 bg-primary/98 backdrop-blur-md" />
+            <div className="absolute inset-0 bg-secondary/98 backdrop-blur-md" />
             <div className="relative z-10 flex flex-col items-center justify-center min-h-screen gap-10">
               {navLinks.map((link, i) => (
                 <motion.div
@@ -147,7 +147,7 @@ export default function Header() {
                     className={`text-2xl tracking-[0.3em] uppercase font-sans transition-colors duration-200 ${
                       pathname === link.href
                         ? "text-gold"
-                        : "text-offwhite/50 hover:text-offwhite"
+                        : "text-offwhite/60 hover:text-offwhite"
                     }`}
                   >
                     {link.label}
@@ -161,7 +161,7 @@ export default function Header() {
                 className="mt-12"
               >
                 <div className="w-12 h-px bg-gold/20 mx-auto mb-6" />
-                <p className="text-[10px] tracking-[0.2em] uppercase text-muted/50 font-sans text-center">
+                <p className="text-[10px] tracking-[0.2em] uppercase text-muted font-sans text-center">
                   Small Batch Wines
                   <br />
                   Santa Rosa Plateau

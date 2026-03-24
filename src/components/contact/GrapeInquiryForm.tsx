@@ -39,7 +39,7 @@ export default function GrapeInquiryForm() {
   if (isSubmitted) {
     return (
       <div className="text-center py-12">
-        <div className="w-12 h-12 border border-gold/30 rounded-full flex items-center justify-center mx-auto mb-6">
+        <div className="w-12 h-12 border border-gold/40 rounded-full flex items-center justify-center mx-auto mb-6">
           <svg
             className="w-6 h-6 text-gold"
             fill="none"
@@ -58,7 +58,7 @@ export default function GrapeInquiryForm() {
         <h3 className="font-serif text-xl text-offwhite mb-2">
           Inquiry Received
         </h3>
-        <p className="text-muted text-sm">
+        <p className="text-body text-sm">
           Thank you for your interest. We will reach out when availability is confirmed.
         </p>
       </div>
@@ -81,7 +81,7 @@ export default function GrapeInquiryForm() {
           name="name"
           required
           autoComplete="name"
-          className="w-full px-4 py-3 bg-primary border border-offwhite/10 text-offwhite placeholder:text-muted/30 focus:outline-none focus:border-gold/40 transition-colors duration-300"
+          className="w-full px-4 py-3 bg-secondary border border-body/15 text-offwhite placeholder:text-muted/50 focus:outline-none focus:border-gold/50 transition-colors duration-300"
           placeholder="Your name"
         />
       </div>
@@ -100,7 +100,7 @@ export default function GrapeInquiryForm() {
           name="email"
           required
           autoComplete="email"
-          className="w-full px-4 py-3 bg-primary border border-offwhite/10 text-offwhite placeholder:text-muted/30 focus:outline-none focus:border-gold/40 transition-colors duration-300"
+          className="w-full px-4 py-3 bg-secondary border border-body/15 text-offwhite placeholder:text-muted/50 focus:outline-none focus:border-gold/50 transition-colors duration-300"
           placeholder="your@email.com"
         />
       </div>
@@ -118,7 +118,7 @@ export default function GrapeInquiryForm() {
           name="message"
           required
           rows={5}
-          className="w-full px-4 py-3 bg-primary border border-offwhite/10 text-offwhite placeholder:text-muted/30 focus:outline-none focus:border-gold/40 transition-colors duration-300 resize-vertical"
+          className="w-full px-4 py-3 bg-secondary border border-body/15 text-offwhite placeholder:text-muted/50 focus:outline-none focus:border-gold/50 transition-colors duration-300 resize-vertical"
           placeholder="Varietals of interest, estimated quantity, and any other details..."
         />
       </div>
@@ -128,7 +128,7 @@ export default function GrapeInquiryForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full py-4 px-6 border border-wine/40 text-wine-light text-xs tracking-[0.25em] uppercase hover:bg-wine/10 hover:border-wine/60 focus:outline-none focus:border-wine/60 disabled:opacity-50 transition-all duration-500"
+        className="w-full py-4 px-6 border border-wine/50 text-wine-light text-xs tracking-[0.25em] uppercase hover:bg-wine/10 hover:border-wine/70 focus:outline-none focus:border-wine/70 disabled:opacity-50 transition-all duration-500"
       >
         {isSubmitting ? "Submitting..." : "Submit Inquiry"}
       </button>

@@ -31,7 +31,7 @@ export default function CurrentReleases() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-28 sm:py-36 px-4 sm:px-6 lg:px-8 bg-secondary">
+    <section className="py-28 sm:py-36 px-4 sm:px-6 lg:px-8 bg-surface">
       <div ref={ref} className="max-w-6xl mx-auto">
         {/* Section Header */}
         <motion.div
@@ -40,16 +40,16 @@ export default function CurrentReleases() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <p className="text-[10px] tracking-[0.4em] uppercase text-gold/60 font-sans mb-4">
+          <p className="text-[10px] tracking-[0.4em] uppercase text-gold/70 font-sans mb-4">
             Estate Grown &middot; Small Batch
           </p>
           <h2 className="font-serif text-4xl sm:text-5xl text-offwhite font-light">
             Current Releases
           </h2>
-          <div className="w-16 h-px bg-gold/30 mx-auto mt-6" />
+          <div className="w-16 h-px bg-gold/40 mx-auto mt-6" />
         </motion.div>
 
-        {/* 3D Bottle */}
+        {/* 3D Cellar Scene */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
@@ -58,11 +58,11 @@ export default function CurrentReleases() {
         >
           <Suspense
             fallback={
-              <div className="h-[400px] sm:h-[500px] flex items-center justify-center">
+              <div className="h-[450px] sm:h-[550px] flex items-center justify-center">
                 <div className="text-center">
                   <div className="w-8 h-8 border border-gold/30 border-t-gold/80 rounded-full animate-spin mx-auto mb-4" />
-                  <p className="text-xs tracking-[0.2em] uppercase text-muted/40">
-                    Loading
+                  <p className="text-xs tracking-[0.2em] uppercase text-muted">
+                    Loading cellar
                   </p>
                 </div>
               </div>
@@ -94,10 +94,10 @@ export default function CurrentReleases() {
               <h3 className="font-serif text-2xl text-offwhite font-light">
                 {wine.name}
               </h3>
-              <p className="text-xs tracking-[0.2em] uppercase text-gold/60 mt-2 font-sans">
+              <p className="text-xs tracking-[0.2em] uppercase text-gold/70 mt-2 font-sans">
                 {wine.year} Vintage
               </p>
-              <p className="text-sm text-muted mt-4 leading-relaxed italic font-serif">
+              <p className="text-sm text-body/80 mt-4 leading-relaxed italic font-serif">
                 {wine.note}
               </p>
             </motion.div>
@@ -109,7 +109,7 @@ export default function CurrentReleases() {
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.8, delay: 1 }}
-          className="text-center text-muted/50 text-xs tracking-wide mt-16 max-w-md mx-auto"
+          className="text-center text-muted text-xs tracking-wide mt-16 max-w-md mx-auto"
         >
           Estate-grown reds, handcrafted in small lots on the Santa Rosa
           Plateau. Each bottle reflects the character of our unique terroir.

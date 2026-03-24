@@ -22,14 +22,14 @@ export default function Footer() {
               <br />
               La Cresta, California.
             </p>
-            <p className="text-xs text-muted/50 mt-3 italic font-serif">
+            <p className="text-xs text-caption mt-3 italic font-serif">
               A Greiner family passion project.
             </p>
           </div>
 
           {/* Navigation Column */}
           <div className="text-center">
-            <h3 className="text-[10px] tracking-[0.3em] uppercase font-sans text-gold/60 mb-8">
+            <h3 className="text-[10px] tracking-[0.3em] uppercase font-sans text-gold/70 mb-8">
               Explore
             </h3>
             <nav aria-label="Footer navigation">
@@ -64,10 +64,10 @@ export default function Footer() {
 
           {/* Contact Column */}
           <div className="text-center md:text-right">
-            <h3 className="text-[10px] tracking-[0.3em] uppercase font-sans text-gold/60 mb-8">
+            <h3 className="text-[10px] tracking-[0.3em] uppercase font-sans text-gold/70 mb-8">
               Get in Touch
             </h3>
-            <p className="text-sm text-offwhite/80 font-medium mb-3">
+            <p className="text-sm text-offwhite font-medium mb-3">
               Don Greiner, Proprietor
             </p>
             <p className="text-sm text-muted mb-1">
@@ -86,7 +86,7 @@ export default function Footer() {
                 dongreiner1957@gmail.com
               </a>
             </p>
-            <p className="text-xs text-muted/50">
+            <p className="text-xs text-muted">
               La Cresta, California
               <br />
               Tastings by appointment only
@@ -96,7 +96,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-20 pt-8 border-t border-gold/5 text-center">
-          <p className="text-xs text-muted/30">
+          <p className="text-xs text-caption">
             &copy; {currentYear} Cresta Bella Vineyards. All rights reserved.
           </p>
         </div>

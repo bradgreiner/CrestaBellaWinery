@@ -9,7 +9,7 @@ export default function OurStory() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-primary">
+    <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-secondary">
       <div ref={ref} className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -20,7 +20,7 @@ export default function OurStory() {
           <h2 className="font-serif text-4xl sm:text-5xl text-offwhite font-light mb-4">
             Our Story
           </h2>
-          <div className="w-16 h-px bg-gold/30 mx-auto" />
+          <div className="w-16 h-px bg-gold/40 mx-auto" />
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
@@ -28,7 +28,7 @@ export default function OurStory() {
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-6 text-muted leading-relaxed"
+            className="space-y-6 text-body leading-[1.7]"
           >
             <p>
               Cresta Bella Vineyards began the way most good things do — with
@@ -71,7 +71,7 @@ export default function OurStory() {
                 className="w-full h-auto hover:scale-105 transition-transform duration-700"
               />
             </div>
-            <p className="text-xs text-muted/40 mt-4 text-center italic font-serif">
+            <p className="text-xs text-muted mt-4 text-center italic font-serif">
               Don &amp; Diane Greiner, Proprietors
             </p>
           </motion.div>

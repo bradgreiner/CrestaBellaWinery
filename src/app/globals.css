@@ -3,12 +3,14 @@
 @tailwind utilities;
 
 :root {
-  --color-primary: #0A0A0A;
-  --color-secondary: #1A1A1A;
+  --color-primary: #0D0B0E;
+  --color-secondary: #1E1B1A;
+  --color-surface: #252220;
   --color-wine: #6B2D3E;
   --color-gold: #C5A572;
   --color-offwhite: #F5F0EB;
-  --color-muted: #8A8278;
+  --color-body: #EDE7DD;
+  --color-muted: #A89F94;
 }
 
 html {
@@ -16,8 +18,10 @@ html {
 }
 
 body {
-  color: var(--color-offwhite);
+  color: var(--color-body);
   background: var(--color-primary);
+  font-size: 1.0625rem;
+  line-height: 1.7;
 }
 
 /* Skip to content link for accessibility */

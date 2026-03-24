@@ -8,13 +8,13 @@ export default function ThreeGenerations() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-primary">
+    <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-secondary">
       <div ref={ref} className="max-w-3xl mx-auto text-center">
         <motion.div
           initial={{ scaleX: 0 }}
           animate={isInView ? { scaleX: 1 } : {}}
           transition={{ duration: 0.8 }}
-          className="w-16 h-px bg-gold/30 mx-auto mb-10 origin-center"
+          className="w-16 h-px bg-gold/40 mx-auto mb-10 origin-center"
         />
 
         <motion.h2
@@ -30,7 +30,7 @@ export default function ThreeGenerations() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-muted leading-relaxed text-lg font-serif"
+          className="text-body leading-[1.7] text-lg font-serif"
         >
           Cresta Bella Vineyards is more than a winery. It is a family
           project that has spanned three generations. From planting the
@@ -47,7 +47,7 @@ export default function ThreeGenerations() {
           initial={{ scaleX: 0 }}
           animate={isInView ? { scaleX: 1 } : {}}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="w-16 h-px bg-gold/30 mx-auto mt-10 origin-center"
+          className="w-16 h-px bg-gold/40 mx-auto mt-10 origin-center"
         />
       </div>
     </section>

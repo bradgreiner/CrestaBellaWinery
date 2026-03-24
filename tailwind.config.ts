@@ -9,8 +9,9 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: "#0A0A0A",
-        secondary: "#1A1A1A",
+        primary: "#0D0B0E",
+        secondary: "#1E1B1A",
+        surface: "#252220",
         wine: {
           DEFAULT: "#6B2D3E",
           light: "#8B3D4E",
@@ -22,12 +23,17 @@ const config: Config = {
           dark: "#A68B5B",
         },
         offwhite: "#F5F0EB",
-        muted: "#8A8278",
+        body: "#EDE7DD",
+        muted: "#A89F94",
+        caption: "#8A8278",
         charcoal: "#2C2C2C",
       },
       fontFamily: {
         serif: ["Cormorant Garamond", "Georgia", "serif"],
         sans: ["DM Sans", "system-ui", "sans-serif"],
+      },
+      fontSize: {
+        body: ["1.0625rem", { lineHeight: "1.7" }],
       },
       animation: {
         "fade-in": "fadeIn 0.8s ease-out forwards",
