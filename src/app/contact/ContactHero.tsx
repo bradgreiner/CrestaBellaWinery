@@ -14,7 +14,7 @@ export default function ContactHero() {
 
   return (
     <section ref={ref} className="relative h-[60vh] min-h-[400px] overflow-hidden">
-      <motion.div style={{ y }} className="absolute inset-0">
+      <motion.div style={{ y }} className="absolute -inset-y-24 inset-x-0">
         <Image
           src="/images/IMG_8538.jpeg"
           alt="Cresta Bella Vineyards vineyard"

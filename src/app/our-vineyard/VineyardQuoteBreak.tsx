@@ -16,12 +16,12 @@ export default function VineyardQuoteBreak() {
 
   return (
     <section ref={ref} className="relative py-32 sm:py-40 px-4 sm:px-6 overflow-hidden">
-      <motion.div style={{ y }} className="absolute inset-0">
+      <motion.div style={{ y }} className="absolute -inset-y-20 inset-x-0">
         <Image
           src="/images/IMG_8081.jpeg"
           alt="Estate-grown grapes ripening on the vine at Cresta Bella Vineyards"
           fill
-          className="object-cover scale-110"
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-primary/70" />
       </motion.div>

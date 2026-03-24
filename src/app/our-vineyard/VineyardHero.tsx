@@ -14,7 +14,7 @@ export default function VineyardHero() {
 
   return (
     <section ref={ref} className="relative h-[70vh] min-h-[500px] overflow-hidden">
-      <motion.div style={{ y }} className="absolute inset-0">
+      <motion.div style={{ y }} className="absolute -inset-y-24 inset-x-0">
         <Image
           src="/images/IMG_8538.jpeg"
           alt="The Santa Rosa Plateau at sunset"

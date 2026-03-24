@@ -17,12 +17,12 @@ export default function QuoteBreak() {
   return (
     <section ref={ref} className="relative py-36 sm:py-44 px-4 sm:px-6 overflow-hidden">
       {/* Parallax background */}
-      <motion.div style={{ y }} className="absolute inset-0">
+      <motion.div style={{ y }} className="absolute -inset-y-20 inset-x-0">
         <Image
           src="/images/IMG_8081.jpeg"
           alt="Estate-grown grapes ripening on the vine at Cresta Bella Vineyards, La Cresta California"
           fill
-          className="object-cover scale-110"
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-primary/65" />
       </motion.div>

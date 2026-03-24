@@ -16,7 +16,7 @@ export default function Hero() {
   return (
     <section ref={ref} className="relative h-screen overflow-hidden">
       {/* Parallax background */}
-      <motion.div style={{ y }} className="absolute inset-0">
+      <motion.div style={{ y }} className="absolute -inset-y-24 inset-x-0">
         <Image
           src="/images/IMG_8538.jpeg"
           alt="Sunset over the Santa Rosa Plateau at Cresta Bella Vineyards"
